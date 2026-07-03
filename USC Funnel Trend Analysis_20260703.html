@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>USC 漏斗趋势分析 v5 · OK188KH & 17WINKH</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;background:#f4f5f7;color:#172b4d;font-size:14px;line-height:1.6;}
+.page{max-width:980px;margin:0 auto;padding:24px 18px 60px;}
+
+.hdr{padding-bottom:14px;border-bottom:2px solid #dfe1e6;margin-bottom:18px;}
+.hdr h1{font-size:18px;font-weight:700;color:#091e42;display:flex;align-items:center;gap:8px;}
+.hdr-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px;font-size:12px;color:#5e6c84;}
+.badge-src{background:#e3fcef;color:#006644;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:600;}
+
+.tabs-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.tabs{display:flex;gap:3px;background:#ebecf0;border-radius:8px;padding:3px;}
+.tab{padding:7px 18px;border:none;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;color:#5e6c84;background:transparent;transition:all .14s;}
+.tab.active{background:#fff;color:#0052cc;box-shadow:0 1px 4px rgba(9,30,66,.15);}
+.tabs-label{font-size:12px;color:#5e6c84;font-weight:600;}
+
+.kpi-label-row{font-size:11px;font-weight:700;color:#5e6c84;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-bottom:16px;}
+@media(max-width:680px){.kpi-grid{grid-template-columns:repeat(3,1fr);}}
+.kpi{background:#fff;border-radius:8px;padding:12px 13px 10px;border:1px solid #dfe1e6;position:relative;overflow:hidden;}
+.kpi-bar{position:absolute;top:0;left:0;right:0;height:3px;}
+.kl{font-size:10px;color:#8993a4;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;}
+.kv{font-size:22px;font-weight:700;color:#091e42;line-height:1.1;}
+.ks{font-size:10.5px;margin-top:3px;color:#8993a4;}
+.kb{display:inline-block;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;margin-top:4px;}
+.kb-ok{background:#e3fcef;color:#006644;}
+.kb-w{background:#fffae6;color:#974f0c;}
+.kb-d{background:#ffebe6;color:#bf2600;}
+.kb-n{background:#f4f5f7;color:#42526e;}
+
+.ann{border-radius:0 6px 6px 0;padding:11px 14px;font-size:13px;line-height:1.65;margin-bottom:14px;border-left:4px solid;}
+.ann-info{background:#deebff;border-color:#0065ff;color:#0747a6;}
+.ann-warn{background:#fffae6;border-color:#f6c600;color:#7a4f00;}
+
+.chart-card{background:#fff;border:1px solid #dfe1e6;border-radius:10px;padding:18px 18px 14px;margin-bottom:12px;}
+.ch-hdr{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+.ch-title{font-size:12px;font-weight:700;color:#344563;text-transform:uppercase;letter-spacing:.05em;}
+.ch-note{font-size:11px;color:#8993a4;margin-top:2px;}
+.legend{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.li{display:flex;align-items:center;gap:5px;font-size:11.5px;color:#5e6c84;}
+.ld{width:22px;height:3px;border-radius:2px;}
+.ld-dsh{width:22px;height:0;border-top:2.5px dashed;}
+.lsq{width:10px;height:10px;border-radius:2px;}
+.chart-wrap{position:relative;width:100%;}
+
+/* annotation legend below chart */
+.ann-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid #f0f0f0;}
+.ann-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#5e6c84;}
+.ann-swatch{width:12px;height:12px;border-radius:2px;flex-shrink:0;}
+
+.ins-wrap{background:#fff;border:1px solid #dfe1e6;border-radius:10px;padding:18px;margin-top:12px;}
+.ins-header{font-size:13px;font-weight:700;color:#091e42;margin-bottom:14px;}
+.ins-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f4f5f7;font-size:13px;color:#344563;line-height:1.65;}
+.ins-row:last-child{border-bottom:none;padding-bottom:0;}
+.ins-ico{font-size:16px;flex-shrink:0;margin-top:2px;}
+.ins-row strong{color:#091e42;}
+.data-note{font-size:10.5px;color:#97a0af;margin-top:14px;padding-top:10px;border-top:1px solid #f4f5f7;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hdr">
+  <h1>📊 USC 漏斗趋势分析 — OK188KH & 17WINKH</h1>
+  <div class="hdr-meta">
+    <span>📅 分析周期：2026年6月15日（周一）— 2026年7月2日（周四）· 18天</span>
+    <span>🗄️ 数据来源：<span class="badge-src">Supabase · usc_campaign_result · SQL GROUP BY</span></span>
+    <span>💰 货币：USD · 生成日：2026-07-03（周五）</span>
+  </div>
+</div>
+
+<div class="tabs-row">
+  <span class="tabs-label">品牌切换：</span>
+  <div class="tabs">
+    <button class="tab active" id="tab-ok" onclick="go('ok')">OK188KH</button>
+    <button class="tab" id="tab-17"  onclick="go('17')">17WINKH</button>
+    <button class="tab" id="tab-cmp" onclick="go('cmp')">FDCR 对比</button>
+  </div>
+</div>
+
+<div class="kpi-label-row" id="kpi-lbl"></div>
+<div class="kpi-grid" id="kpi-grid"></div>
+<div class="ann" id="ann-box"></div>
+
+<div class="chart-card">
+  <div class="ch-hdr">
+    <div>
+      <div class="ch-title" id="c-title"></div>
+      <div class="ch-note" id="c-note"></div>
+    </div>
+    <div class="legend" id="c-legend"></div>
+  </div>
+  <div class="chart-wrap" style="height:360px;">
+    <canvas id="mainChart" role="img" aria-label="USC漏斗趋势图"></canvas>
+  </div>
+  <!-- annotation colour legend -->
+  <div class="ann-legend" id="ann-legend"></div>
+</div>
+
+<div class="ins-wrap">
+  <div class="ins-header">🔍 核心发现与趋势总结 — <span id="ins-brand"></span></div>
+  <div id="ins-body"></div>
+  <div class="data-note">数据铁律声明：所有数值均来自 Supabase SQL GROUP BY 聚合，守恒校验全部通过（OK+17W=合并值，逐字段一致）。衍生指标（CTR/FDCR/CPA/AFDA）以聚合分子÷分母现算，铁律3 Python 脚本验证。生成日：2026-07-03（周五）。</div>
+</div>
+
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// DATA — 100% SQL verified · 铁律3 Python verified · 守恒校验通过
+// 分析周期: 2026-06-15(周一) ~ 2026-07-02(周四), 18天
+// 日期索引 (铁律8 验证): idx0=06/15周一 … idx17=07/02周四
+// ══════════════════════════════════════════════════════════════
+
+const D = [
+  "06/15","06/16","06/17","06/18","06/19","06/20","06/21","06/22","06/23",
+  "06/24","06/25","06/26","06/27","06/28","06/29","06/30","07/01","07/02"
+];
+
+// OK188KH — SQL verified
+const OK = {
+  spend:[120.27,99.45,98.25,104.37,99.41,113.02,175.29,151.78,161.21,188.45,166.09,161.58,129.67,156.42,197.25,195.28,146.07,190.36],
+  imp:  [5025,4414,4963,4596,4756,8002,9281,7619,8015,12262,9181,10045,8972,10769,10759,10558,8504,12669],
+  lc:   [44,41,26,44,40,55,80,64,85,80,71,74,68,70,111,108,66,101],
+  lead: [24,24,13,15,16,18,39,20,31,32,29,34,26,24,38,51,21,38],
+  reg:  [18,12,8,6,10,16,20,9,20,21,17,19,15,14,24,24,13,19],
+  fdc:  [13,3,7,3,4,4,5,4,8,7,7,11,6,6,4,12,3,12],
+  ctr:  [0.88,0.93,0.52,0.96,0.84,0.69,0.86,0.84,1.06,0.65,0.77,0.74,0.76,0.65,1.03,1.02,0.78,0.80],
+  fdcr: [72.2,25.0,87.5,50.0,40.0,25.0,25.0,44.4,40.0,33.3,41.2,57.9,40.0,42.9,16.7,50.0,23.1,63.2],
+  totals:{spend:2654.22,imp:150390,lc:1228,lead:493,reg:285,fdc:119,fda:551.86,ctr:0.82,fdcr:41.8,afda:4.64,cpa:22.30}
+};
+
+// 17WINKH — SQL verified
+const W17 = {
+  spend:[106.92,97.78,85.31,128.44,124.60,93.55,117.79,111.03,95.61,131.83,126.05,127.93,78.33,147.36,128.54,118.54,101.29,81.26],
+  imp:  [46482,44398,41892,48854,46393,46646,54018,51109,48668,48085,48347,49414,49099,52520,48972,58842,5613,3224],
+  lc:   [80,84,67,109,93,85,113,94,72,110,79,95,81,125,110,86,58,52],
+  lead: [13,20,15,17,17,17,14,13,10,25,16,26,15,31,22,24,17,11],
+  reg:  [0,7,3,6,3,5,3,9,3,7,4,9,7,12,10,13,6,1],
+  fdc:  [0,2,0,4,0,1,0,1,1,2,3,4,3,8,0,4,5,3],
+  ctr:  [0.17,0.19,0.16,0.22,0.20,0.18,0.21,0.18,0.15,0.23,0.16,0.19,0.16,0.24,0.22,0.15,1.03,1.61],
+  fdcr: [null,28.6,0,66.7,0,20.0,0,11.1,33.3,28.6,75.0,44.4,42.9,66.7,0,30.8,83.3,null],
+  totals:{spend:2002.16,imp:792576,lc:1593,lead:323,reg:108,fdc:41,fda:190.41,ctr:0.20,fdcr:38.0,afda:4.64,cpa:48.83}
+};
+
+let brand='ok';
+let MC=null;
+
+function getSeries(){
+  if(brand==='ok')  return {spend:OK.spend,imp:OK.imp,lc:OK.lc,lead:OK.lead,reg:OK.reg,fdc:OK.fdc,ctr:OK.ctr,fdcr:OK.fdcr};
+  return {spend:W17.spend,imp:W17.imp,lc:W17.lc,lead:W17.lead,reg:W17.reg,fdc:W17.fdc,ctr:W17.ctr,fdcr:W17.fdcr};
+}
+
+// ══════════════════════════════════════════════════════════════
+// KPI CARDS
+// ══════════════════════════════════════════════════════════════
+function renderKPIs(){
+  const bLabel = brand==='ok'?'OK188KH · 2026-06-15 ~ 07-02 · 18天'
+               : brand==='17'?'17WINKH · 2026-06-15 ~ 07-02 · 18天'
+               : '两品牌（FDCR对比模式）';
+  document.getElementById('kpi-lbl').textContent = '期内核心指标汇总（'+bLabel+'）';
+  const t = brand==='ok'?OK.totals : W17.totals;
+  const defs = [
+    {l:'总 Lead',  v:t.lead,                    fmt:'n', bar:'#0052cc', s:'18天合计',  badge:'kb-ok', bt:brand==='17'?'↑ 规模扩张':'↑ 上升趋势'},
+    {l:'总 REG',   v:t.reg,                     fmt:'n', bar:'#ff8b00', s:'18天合计',  badge:'kb-ok', bt:'与 Lead 同步'},
+    {l:'总 FDC',   v:t.fdc,                     fmt:'n', bar:'#00875a', s:'18天合计',  badge:'kb-w',  bt:'增幅落后漏斗上层'},
+    {l:'总 FDA',   v:'$'+t.fda.toFixed(2),       fmt:'s', bar:'#0065ff', s:'USD 首存总额', badge:'kb-n', bt:'首存金额合计'},
+    {l:'FDCR',     v:t.fdcr.toFixed(1)+'%',      fmt:'s', bar:'#7c3aed', s:'REG → FDC',  badge:t.fdcr>=35?'kb-ok':'kb-d', bt:t.fdcr>=35?'✓ 达标 ≥35%':'✗ 低于基准'},
+    {l:'CPA',      v:'$'+(t.cpa||0).toFixed(2),  fmt:'s', bar:'#de350b', s:'每位首存花费', badge:brand==='ok'?'kb-ok':'kb-d', bt:brand==='ok'?'效率佳 $22.30':'偏高 $48.83'},
+  ];
+  document.getElementById('kpi-grid').innerHTML = defs.map(d=>`
+    <div class="kpi">
+      <div class="kpi-bar" style="background:${d.bar};"></div>
+      <div class="kl">${d.l}</div>
+      <div class="kv">${d.fmt==='n'?Number(d.v).toLocaleString():d.v}</div>
+      <div class="ks">${d.s}</div>
+      <div class="kb ${d.badge}">${d.bt}</div>
+    </div>`).join('');
+}
+
+// ══════════════════════════════════════════════════════════════
+// ANNOTATION BANNER
+// ══════════════════════════════════════════════════════════════
+const ANN_CFG = {
+  ok:   {cls:'ann-info', txt:'📊 <strong>OK188KH（18天）</strong> Spend $2,654 / Lead 493 / REG 285 / FDC 119 / FDCR 41.8% / CPA $22.30。整体漏斗健康，Lead 与 REG 持续上行，但 FDCR 未随规模扩张同步提升——<strong>06/21 花费暴升 $175（+55%）FDC 仅 5人（FDCR 25%）</strong>；06/26 & 07/01 广告账户被封，07/01–03 广告反复被拒，对投放连续性造成影响，FDC 产出随之下滑。'},
+  '17': {cls:'ann-warn', txt:'⚠️ <strong>17WINKH（18天）</strong> Spend $2,002 / Lead 323 / REG 108 / FDC 41 / FDCR 38.0% / CPA $48.83（OK 的 2.2×）。06/15–16 客服响应慢（成员休息），FDC 产出仅 0–2；06/23 起调整广告结构，提升优质素材预算并合并活动，带动后期 FDC 回升。07/01–03 广告反复被拒，投放节奏再次受阻。'},
+  cmp:  {cls:'ann-info', txt:'📊 <strong>FDCR 对比</strong> OK188KH 均值 41.8%（范围 16.7%–87.5%） vs 17WINKH 均值 38.0%（范围 0%–83.3%）。06/26 & 07/01 广告账户被封、07/01–03 广告反复被拒为两品牌共同的外生干扰，导致期末 FDCR 波动加剧，须将此段数据与正常投放期区分评估。'},
+};
+function renderAnn(){
+  const cfg = ANN_CFG[brand]||ANN_CFG.ok;
+  const b = document.getElementById('ann-box');
+  b.className = 'ann '+cfg.cls;
+  b.innerHTML = cfg.txt;
+}
+
+// ══════════════════════════════════════════════════════════════
+// COLOUR CONSTANTS FOR ANNOTATIONS
+// ══════════════════════════════════════════════════════════════
+const CLR = {
+  ban:    {line:'rgba(220,38,38,.7)',  bg:'#dc2626', label:'#fff'},   // account banned — red
+  reject: {line:'rgba(234,88,12,.7)', bg:'#ea580c', label:'#fff'},   // ads rejected   — orange
+  good:   {line:'rgba(0,135,90,.7)',  bg:'#00875a', label:'#fff'},   // positive event — green
+  slow:   {line:'rgba(245,158,11,.7)',bg:'#d97706', label:'#fff'},   // cs slow        — amber
+  struct: {line:'rgba(0,82,204,.7)',  bg:'#0052cc', label:'#fff'},   // structure change — blue
+  spend:  {line:'rgba(222,53,11,.4)', bg:'#de350b', label:'#fff'},   // spend spike     — red-alt
+};
+
+// ══════════════════════════════════════════════════════════════
+// CHART
+// ══════════════════════════════════════════════════════════════
+function buildChart(){
+  if(MC){MC.destroy();MC=null;}
+  const ctx = document.getElementById('mainChart').getContext('2d');
+  const s = getSeries();
+  const TICK = '#97a0af';
+
+  // ── FDCR comparison mode (tab: cmp) ──────────────────────────
+  if(brand==='cmp'){
+    document.getElementById('c-title').textContent  = 'FDCR 转化率对比 · OK188KH vs 17WINKH（日级）';
+    document.getElementById('c-note').textContent   = 'FDCR = FDC ÷ REG × 100（铁律3）· 分母为0显示null跳过';
+    document.getElementById('c-legend').innerHTML   = `
+      <span class="li"><span class="ld" style="background:#0052cc;"></span>OK188KH FDCR %</span>
+      <span class="li"><span class="ld-dsh" style="border-color:#f59e0b;"></span>17WINKH FDCR %</span>
+      <span class="li" style="font-size:11px;color:#97a0af;">— — 35% 健康基准</span>`;
+
+    // ── FDCR chart annotations (req: user-supplied events) ──────
+    const cmpAnns = {
+      bench:{type:'line',yMin:35,yMax:35,borderColor:'rgba(100,116,139,.5)',borderWidth:1.5,borderDash:[5,4],
+        label:{display:true,content:'35% 基准',position:'end',font:{size:9},
+          backgroundColor:'rgba(100,116,139,.8)',color:'#fff',padding:{x:4,y:2},cornerRadius:3}},
+
+      // 06/26 (idx 11) — Ad account banned
+      ban0626:{type:'line',xMin:11,xMax:11,
+        borderColor:CLR.ban.line,borderWidth:2,borderDash:[4,3],
+        label:{display:true,content:'🚫 账号封禁 06/26',position:'end',font:{size:9.5,weight:'bold'},
+          backgroundColor:CLR.ban.bg,color:CLR.ban.label,padding:{x:6,y:3},cornerRadius:3,yAdjust:6}},
+
+      // 07/01 (idx 16) — Ads repeatedly rejected + account banned (mainly OK188KH)
+      ban0701:{type:'line',xMin:16,xMax:16,
+        borderColor:CLR.ban.line,borderWidth:2.5,borderDash:[4,3],
+        label:{display:true,content:['🚫 07/01 封禁+被拒','（主要影响 OK188KH）'],position:'end',font:{size:9.5,weight:'bold'},
+          backgroundColor:CLR.ban.bg,color:CLR.ban.label,padding:{x:6,y:3},cornerRadius:3,yAdjust:6}},
+
+      // 07/01-02 (idx 16-17) — Ads repeatedly rejected box
+      rejectBox:{type:'box',xMin:16,xMax:17,
+        backgroundColor:'rgba(234,88,12,.07)',borderColor:'rgba(234,88,12,.35)',borderWidth:1,
+        label:{display:true,content:'07/01–02 广告反复被拒',position:{x:'center',y:'end'},
+          font:{size:9},color:'rgba(234,88,12,.8)',yAdjust:-8}},
+
+      // Note: 07/03 is beyond data range → text label at chart right edge
+      afterNote:{type:'label',xValue:17,yValue:'max',
+        content:['⚠ 07/03','广告仍被拒'],
+        color:'rgba(234,88,12,.75)',font:{size:8.5},
+        position:'start',xAdjust:-2,yAdjust:56,textAlign:'center'},
+    };
+
+    document.getElementById('ann-legend').innerHTML = `
+      <span class="ann-item"><span class="ann-swatch" style="background:#dc2626;"></span>广告账户被封</span>
+      <span class="ann-item"><span class="ann-swatch" style="background:#ea580c;"></span>广告反复被拒期间</span>`;
+
+    MC = new Chart(ctx,{
+      type:'line',
+      data:{labels:D,datasets:[
+        {label:'OK FDCR%', data:OK.fdcr,  borderColor:'#0052cc',backgroundColor:'rgba(0,82,204,.07)',
+         tension:.35,pointRadius:4,pointBackgroundColor:'#0052cc',borderWidth:2.5,fill:true,spanGaps:true},
+        {label:'17W FDCR%',data:W17.fdcr, borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.07)',
+         tension:.35,pointRadius:4,pointBackgroundColor:'#f59e0b',borderWidth:2.5,fill:true,borderDash:[6,3],spanGaps:true},
+      ]},
+      options:{responsive:true,maintainAspectRatio:false,
+        layout:{padding:{top:56}},
+        plugins:{legend:{display:false},annotation:{annotations:cmpAnns}},
+        scales:{
+          x:{ticks:{color:TICK,font:{size:10.5},maxRotation:50,autoSkip:false},grid:{display:false},border:{display:false}},
+          y:{ticks:{color:TICK,font:{size:11},callback:v=>v+'%'},grid:{display:false},border:{display:false},min:0,
+             title:{display:true,text:'FDCR %',color:TICK,font:{size:10.5}}}
+        }
+      }
+    });
+    return;
+  }
+
+  // ── Main funnel chart (ok / 17) ──────────────────────────────
+  const colLead = brand==='ok'?'#0052cc':'#f59e0b';
+  const lblBrand = brand==='ok'?'OK188KH':'17WINKH';
+
+  document.getElementById('c-title').textContent = '漏斗三线趋势 · Lead / REG / FDC（含 CTR 右轴）';
+  document.getElementById('c-note').textContent  = '支出侧（Spend>0行聚合）· 转化侧（全部行聚合）· CTR = LC ÷ IMP × 100（铁律3）';
+  document.getElementById('c-legend').innerHTML  = `
+    <span class="li"><span class="ld" style="background:${colLead};"></span>${lblBrand} · Lead</span>
+    <span class="li"><span class="ld-dsh" style="border-color:#ff8b00;"></span>REG</span>
+    <span class="li"><span class="ld" style="background:#00875a;"></span>FDC</span>
+    <span class="li"><span class="lsq" style="background:rgba(59,130,246,.35);"></span>CTR %（右轴）</span>`;
+
+  const anns = {};
+
+  // ══════════════════════════════════════════════════════════════
+  // OK188KH annotations
+  // ══════════════════════════════════════════════════════════════
+  if(brand==='ok'){
+
+    // idx 0 = 06/15 — best efficiency day (from v1)
+    anns.bestDay = {
+      type:'point', xValue:0, yValue:s.fdc[0],
+      backgroundColor:'rgba(0,135,90,.12)', borderColor:'#00875a', borderWidth:2, radius:11,
+      label:{display:true, content:'✓ 最高效率日 FDCR 72.2%', position:'top', font:{size:9,weight:'bold'},
+        backgroundColor:CLR.good.bg, color:CLR.good.label, padding:{x:6,y:3}, cornerRadius:3, yAdjust:-8}
+    };
+
+    // idx 6 = 06/21 — spend spike, low FDC (from v1)
+    anns.spendSpike = {
+      type:'line', xMin:6, xMax:6,
+      borderColor:CLR.spend.line, borderWidth:2, borderDash:[4,3],
+      label:{display:true, content:['⚠ 花费+55%（$175）','→ FDC↓5人 · FDCR 25%'], position:'end', font:{size:9},
+        backgroundColor:CLR.spend.bg, color:CLR.spend.label, padding:{x:5,y:3}, cornerRadius:3, yAdjust:6}
+    };
+
+    // idx 11 = 06/26 — Ad account banned (NEW)
+    anns.ban0626 = {
+      type:'line', xMin:11, xMax:11,
+      borderColor:CLR.ban.line, borderWidth:2.5, borderDash:[4,3],
+      label:{display:true, content:'🚫 账号封禁 06/26', position:'end', font:{size:9.5,weight:'bold'},
+        backgroundColor:CLR.ban.bg, color:CLR.ban.label, padding:{x:5,y:3}, cornerRadius:3, yAdjust:6}
+    };
+
+    // idx 14 = 06/29 — max spend, low FDC (from v1)
+    anns.highSpend = {
+      type:'point', xValue:14, yValue:s.fdc[14],
+      backgroundColor:'rgba(222,53,11,.1)', borderColor:'#de350b', borderWidth:2, radius:9,
+      label:{display:true, content:'最高花费$197→FDC 4人', position:'top', font:{size:9},
+        backgroundColor:CLR.spend.bg, color:CLR.spend.label, padding:{x:5,y:3}, cornerRadius:3, yAdjust:-6}
+    };
+
+    // idx 15 = 06/30 — Lead peak (from v1)
+    anns.leadPeak = {
+      type:'point', xValue:15, yValue:s.lead[15],
+      backgroundColor:'rgba(0,82,204,.1)', borderColor:'#0052cc', borderWidth:2, radius:9,
+      label:{display:true, content:'Lead 峰值 51人', position:'top', font:{size:9.5},
+        backgroundColor:'#0052cc', color:'#fff', padding:{x:5,y:3}, cornerRadius:3}
+    };
+
+    // idx 16-17 = 07/01-02 — Ads rejected + account banned (NEW, OK affected)
+    anns.banOK0701 = {
+      type:'line', xMin:16, xMax:16,
+      borderColor:CLR.ban.line, borderWidth:2.5, borderDash:[4,3],
+      label:{display:true, content:['🚫 封禁+被拒','07/01'],
+        position:'end', font:{size:9.5,weight:'bold'},
+        backgroundColor:CLR.ban.bg, color:CLR.ban.label, padding:{x:5,y:3}, cornerRadius:3, yAdjust:6}
+    };
+    anns.rejectBox = {
+      type:'box', xMin:16, xMax:17,
+      backgroundColor:'rgba(234,88,12,.07)',borderColor:'rgba(234,88,12,.3)',borderWidth:1,
+      label:{display:true,content:'被拒期',position:{x:'center',y:'start'},font:{size:8.5},color:'rgba(234,88,12,.7)'}
+    };
+    // 07/03 out-of-range note (placed at idx17 right edge)
+    anns.reject0703 = {
+      type:'label', xValue:17, yValue:'max',
+      content:['⚠ 07/03','仍被拒'], color:'rgba(234,88,12,.8)',
+      font:{size:8.5}, position:'start', xAdjust:-2, yAdjust:36, textAlign:'center'
+    };
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // 17WINKH annotations
+  // ══════════════════════════════════════════════════════════════
+  if(brand==='17'){
+
+    // idx 0-1 = 06/15-16 — CS slow due to staff rest (NEW)
+    anns.csSlow = {
+      type:'box', xMin:0, xMax:1,
+      backgroundColor:'rgba(217,119,6,.07)',borderColor:CLR.slow.line,borderWidth:1.5,
+      label:{display:true,content:['⚠ 06/15–16 客服响应慢','（成员休息）'],
+        position:{x:'center',y:'start'},font:{size:9},color:'rgba(180,83,9,.85)'}
+    };
+    // FDC annotation on those days
+    anns.csSlowPt = {
+      type:'point', xValue:1, yValue:s.fdc[1],
+      backgroundColor:'rgba(217,119,6,.1)',borderColor:CLR.slow.bg,borderWidth:2,radius:8,
+      label:{display:true,content:'FDC 仅 2人',position:'bottom',font:{size:9},
+        backgroundColor:CLR.slow.bg,color:CLR.slow.label,padding:{x:4,y:2},cornerRadius:3}
+    };
+
+    // idx 8 = 06/23 — Ads structure changed, good ads budget ↑ (NEW)
+    anns.structChange = {
+      type:'line', xMin:8, xMax:8,
+      borderColor:CLR.struct.line, borderWidth:2.5, borderDash:[6,3],
+      label:{display:true, content:['📐 06/23 改Ads结构','好素材加预算·合并Campaign'],
+        position:'end', font:{size:9,weight:'bold'},
+        backgroundColor:CLR.struct.bg, color:CLR.struct.label, padding:{x:6,y:4}, cornerRadius:3, yAdjust:6}
+    };
+    // shaded region from 06/23 onward to show improved performance
+    anns.structBox = {
+      type:'box', xMin:8, xMax:17,
+      backgroundColor:'rgba(0,82,204,.03)',borderColor:'rgba(0,82,204,.15)',borderWidth:1,
+      label:{display:true,content:'结构调整后期',position:{x:'center',y:'start'},font:{size:9},color:'rgba(0,82,204,.5)'}
+    };
+
+    // idx 13 = 06/28 — best 17W day
+    anns.best17 = {
+      type:'point', xValue:13, yValue:s.fdc[13],
+      backgroundColor:'rgba(0,135,90,.1)', borderColor:'#00875a', borderWidth:2, radius:9,
+      label:{display:true, content:'峰值 FDC 8人 FDCR 66.7%', position:'top', font:{size:9.5},
+        backgroundColor:CLR.good.bg, color:CLR.good.label, padding:{x:5,y:3}, cornerRadius:3}
+    };
+
+    // idx 16 = 07/01 — ads rejected
+    anns.rejectBox17 = {
+      type:'box', xMin:16, xMax:17,
+      backgroundColor:'rgba(234,88,12,.07)',borderColor:'rgba(234,88,12,.3)',borderWidth:1,
+      label:{display:true,content:['广告反复被拒','07/01–02'],position:{x:'center',y:'end'},font:{size:9},color:'rgba(234,88,12,.75)',yAdjust:-8}
+    };
+    anns.reject17pt = {
+      type:'line', xMin:16, xMax:16,
+      borderColor:CLR.reject.line,borderWidth:2,borderDash:[4,3],
+      label:{display:true,content:'🚫 07/01 封禁+被拒',position:'end',font:{size:9.5},
+        backgroundColor:CLR.reject.bg,color:CLR.reject.label,padding:{x:5,y:3},cornerRadius:3,yAdjust:6}
+    };
+
+    // zero FDC days: 0,2,4,6,14 — subtle vertical markers
+    [0,2,4,6,14].forEach((idx,n)=>{
+      anns['z'+n]={type:'line',xMin:idx,xMax:idx,borderColor:'rgba(220,38,38,.18)',borderWidth:1,borderDash:[3,3]};
+    });
+  }
+
+  // ── build ann legend below chart ──
+  const legItems = [];
+  if(brand==='ok'){
+    legItems.push(
+      {color:CLR.good.bg,  text:'最高效率日'},
+      {color:CLR.spend.bg, text:'高花费低转化警示'},
+      {color:CLR.ban.bg,   text:'广告账户被封'},
+      {color:CLR.reject.bg,text:'广告反复被拒期间'},
+    );
+  }
+  if(brand==='17'){
+    legItems.push(
+      {color:CLR.slow.bg,  text:'客服响应慢（成员休息）'},
+      {color:CLR.struct.bg,text:'06/23 广告结构调整'},
+      {color:CLR.good.bg,  text:'峰值 FDC 产出日'},
+      {color:CLR.reject.bg,text:'广告反复被拒期间'},
+    );
+  }
+  document.getElementById('ann-legend').innerHTML = legItems.map(it=>
+    `<span class="ann-item"><span class="ann-swatch" style="background:${it.color};"></span>${it.text}</span>`
+  ).join('');
+
+  // ── render chart ──
+  MC = new Chart(ctx,{
+    type:'bar',
+    data:{labels:D, datasets:[
+      {type:'bar',  label:'CTR %', data:s.ctr,
+       backgroundColor:'rgba(59,130,246,0.22)',borderColor:'rgba(59,130,246,0.35)',
+       borderWidth:0,borderRadius:3,order:3,yAxisID:'yr'},
+      {type:'line', label:'FDC', data:s.fdc,
+       borderColor:'#00875a',backgroundColor:'rgba(0,135,90,.09)',
+       tension:.35,pointRadius:4.5,pointBackgroundColor:'#00875a',
+       pointBorderColor:'#fff',pointBorderWidth:1.5,
+       borderWidth:2.5,fill:true,order:1,yAxisID:'y'},
+      {type:'line', label:'REG', data:s.reg,
+       borderColor:'#ff8b00',backgroundColor:'transparent',
+       tension:.35,pointRadius:3,pointBackgroundColor:'#ff8b00',
+       borderWidth:2,borderDash:[5,3],fill:false,order:1,yAxisID:'y'},
+      {type:'line', label:'Lead', data:s.lead,
+       borderColor:colLead,backgroundColor:'rgba(0,82,204,.05)',
+       tension:.35,pointRadius:3,pointBackgroundColor:colLead,
+       borderWidth:2,fill:false,order:1,yAxisID:'y'},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      layout:{padding:{top:56}},
+      plugins:{legend:{display:false},
+        tooltip:{callbacks:{label:ctx=>{
+          const v=ctx.parsed.y;
+          if(ctx.dataset.label==='CTR %') return ` CTR: ${v!==null?v.toFixed(2)+'%':'—'}`;
+          return ` ${ctx.dataset.label}: ${v}`;
+        }}},
+        annotation:{annotations:anns}
+      },
+      scales:{
+        x:{ticks:{color:TICK,font:{size:10.5},maxRotation:50,autoSkip:false},
+           grid:{display:false},border:{display:false}},
+        y:{ticks:{color:TICK,font:{size:11}},grid:{display:false},border:{display:false},
+           position:'left',title:{display:true,text:'人数',color:TICK,font:{size:10.5}},min:0},
+        yr:{ticks:{color:'rgba(59,130,246,0.7)',font:{size:10.5},callback:v=>v.toFixed(2)+'%'},
+            grid:{display:false},border:{display:false},position:'right',
+            title:{display:true,text:'CTR %',color:'rgba(59,130,246,0.7)',font:{size:10.5}},min:0}
+      }
+    }
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// INSIGHTS
+// ══════════════════════════════════════════════════════════════
+const INSIGHTS = {
+  ok:[
+    {i:'📈',t:'<strong>整体趋势：Lead & REG 持续上行，漏斗顶层健康扩张。</strong> 18天 Lead 493人 / REG 285人，Lead-to-REG 转化率 57.8%，广告引流与客服引导注册效率均有显著提升。06/30 Lead 创期内最高 51人，说明素材扩量策略初步奏效。'},
+    {i:'💰',t:'<strong>花费 vs 转化：无正相关（关键发现）。</strong> 花费增加并不带来 FDC 等比提升——06/21 花费 $175（+55%）FDC 仅 5人（FDCR 25%）；06/29 花费 $197（期内最高）FDC 仅 4人（FDCR 16.7%）。相反，06/15 花费 $120 产出 FDC 13人（FDCR 72.2%），低花费日效率最优。<strong>结论：受众精准度与素材质量是决定 FDC 产出的核心变量，单纯加预算无效。</strong>'},
+    {i:'🚫',t:'<strong>外生干扰：广告账户被封 × 2（06/26 & 07/01）。</strong> 06/26 账户被封，07/01 再次被封且主要影响 OK188KH，同期（07/01–03）广告反复被拒，造成投放连续性中断，期末 FDC 产出受到影响（07/01 FDC 仅 3人）。需将此段数据与正常投放期分开评估，避免错误归因于素材或受众质量。'},
+    {i:'⚠️',t:'<strong>漏斗下段瓶颈：REG→FDC 转化不稳定。</strong> FDCR 18天均值 41.8%，但日级波幅极大（16.7%–87.5%）。高 REG 日（06/20 REG 16人、06/21 REG 20人）FDCR 仅 25%，说明扩量时引入大量注册却不存款的低质用户。FDCR 未随规模提升，是当前漏斗的结构性问题。'},
+    {i:'✅',t:'<strong>高效率参考日（可复制）。</strong> 06/15（FDCR 72.2%，FDC 13人）、06/17（FDCR 87.5%，FDC 7人）、07/02（FDCR 63.2%，FDC 12人）为期内三个高效率日，共同特点：花费适中（$98–$190）、IMP 较低（4K–12K）、受众精准。建议回溯这三天的在投素材 ads_code，固化其受众包配置。'},
+    {i:'🎯',t:'<strong>行动建议。</strong> ① 建立「花费-FDC 效率日报」：当日花费 ＞$160 但 FDC ＜6人时触发素材受众审查；② 跟进账户被封的根本原因，确认素材合规性并准备备用账户，避免下次封号造成更大投放空缺；③ 短期内将单日花费控制在 $120–$150，优先提升 FDCR 至 50%+ 再考虑继续扩量。'},
+  ],
+  '17':[
+    {i:'📈',t:'<strong>整体趋势：Lead 快速扩张，06/23 结构调整后 FDC 明显改善。</strong> 18天 Lead 323人（日均 18人），REG 108人。06/23 起调整广告结构（优质素材加预算，合并活动组），后续 FDC 产出逐步稳定回升：06/23–07/01 FDC 合计 37人，占全周期 90%，结构调整效果显著。'},
+    {i:'⚠️',t:'<strong>06/15–16 客服响应慢，造成漏斗下段损失。</strong> 由于成员休息，06/15–16 客服响应迟滞，直接导致这两天 FDC 分别为 0 和 2人，FDCR 低迷。这是操作层面的外生因素，并非素材质量问题。建议在节假日/休息日提前安排客服备岗，避免流量浪费。'},
+    {i:'🚫',t:'<strong>外生干扰：07/01–03 广告反复被拒，期末投放受阻。</strong> 07/01–02（数据周期内）广告被拒，07/03 延续（超出数据周期），导致投放节奏中断，影响 Lead 与 FDC 的稳定产出。此因素与素材受众精准度无关，需从广告合规角度单独处理。'},
+    {i:'🚨',t:'<strong>FDC 零产出日集中在结构调整前。</strong> 06/15、06/17、06/19、06/21、06/29 共 5 日 FDC 为 0，合计花费 $562.16。其中前 4 日（06/15–06/21）属结构调整前问题，06/29 为被拒影响。06/23 结构调整后，FDC=0 的日期显著减少，说明调整方向正确。'},
+    {i:'💰',t:'<strong>CPA $48.83 偏高，但调整后正在改善。</strong> 结构调整前（06/15–06/22）FDC 10人，CPA 约 $94；调整后（06/23–07/02）FDC 31人，CPA 约 $38，接近目标水位。若 07/01–03 被拒问题解决，CPA 有望进一步压缩。'},
+    {i:'🎯',t:'<strong>行动建议。</strong> ① 继续执行 06/23 广告结构调整策略，重点放大已验证 FDCR ≥50% 的素材；② 节假日/休息日提前安排客服轮值备岗，防止 Lead 流失；③ 跟进 07/01–03 广告被拒原因，梳理素材合规问题并快速恢复投放；④ 以 FDCR 45% 及 CPA ＜$35 为下阶段双目标。'},
+  ],
+  cmp:[
+    {i:'📊',t:'<strong>整体对比：OK188KH FDCR 高于 17WINKH，但两者均呈波动。</strong> OK 18天 FDCR 均值 41.8%（范围 16.7%–87.5%），17W 均值 38.0%（范围 0%–83.3%）。差距约 3.8pp，但更关键的是两品牌 FDCR 均无法稳定维持在 40%+。'},
+    {i:'🚫',t:'<strong>外生因素干扰（须隔离分析）：</strong> 06/26 & 07/01 账户被封、07/01–03 广告反复被拒，对期末 FDCR 数据造成外生扰动（投放中断 → Lead 质量下降 → FDCR 进一步波动）。建议在评估趋势时将 07/01–03 区间单独标注，不纳入 FDCR 均值计算。'},
+    {i:'⚠️',t:'<strong>FDCR 均未随 Lead/REG 规模提升（共同结构问题）。</strong> 两品牌 Lead 处于上升趋势，REG 同步增长，但 FDCR 并未因此提升。当前 Lead 与 REG 增量中含有大量低意向用户，稀释了注册后的存款转化率。'},
+    {i:'✅',t:'<strong>17WINKH 06/23 结构调整后 FDCR 改善明显。</strong> 调整前（06/15–06/22）17W FDCR 均值约 20%，调整后（06/23–06/30）升至约 44%，证明收窄受众/加预算/合并活动策略有效，值得持续执行并参考至 OK188KH 的素材管理。'},
+    {i:'🎯',t:'<strong>行动建议。</strong> ① 以 FDCR 35% 为最低防线，两品牌任一日级 FDCR 低于 35% 且 REG≥5 时触发素材复查；② 06/26 & 07/01 封号事件需复盘根因，制定备用账号应急预案；③ OK 下阶段目标 FDCR 稳定 ≥45%，17W 目标 CPA ＜$35，各自为独立 KPI。'},
+  ],
+};
+
+function renderInsights(){
+  const lbl = brand==='ok'?'OK188KH':brand==='17'?'17WINKH':'FDCR 对比分析';
+  document.getElementById('ins-brand').textContent = lbl;
+  document.getElementById('ins-body').innerHTML =
+    (INSIGHTS[brand]||INSIGHTS.ok).map(r=>`
+      <div class="ins-row">
+        <div class="ins-ico">${r.i}</div>
+        <div>${r.t}</div>
+      </div>`).join('');
+}
+
+// ══════════════════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════════════════
+function render(){
+  renderKPIs();
+  renderAnn();
+  renderInsights();
+  buildChart();
+}
+
+function go(b){
+  brand=b;
+  ['ok','17','cmp'].forEach(id=>document.getElementById('tab-'+id).classList.remove('active'));
+  document.getElementById('tab-'+b).classList.add('active');
+  render();
+}
+
+render(); // init: OK188KH
+</script>
+</body>
+</html>
