@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>USC - 17WINKH 月报 · 2026年7月</title>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.6;color:#172B4D;max-width:1000px;margin:0 auto;padding:32px 40px;background:#fff}
+  .page-title{font-size:26px;font-weight:700;color:#172B4D;margin:0 0 6px;padding-bottom:12px;border-bottom:3px solid #0052CC}
+  .page-meta{font-size:12px;color:#6B778C;margin-bottom:28px}
+  h2{font-size:17px;font-weight:700;color:#172B4D;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid #DFE1E6}
+  h3{font-size:13px;font-weight:700;color:#5E6C84;margin:16px 0 8px;text-transform:uppercase;letter-spacing:.04em}
+  .panel{border-radius:4px;padding:11px 15px;margin:10px 0;display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.55}
+  .panel-icon{font-size:15px;flex-shrink:0;margin-top:1px}.panel-body{flex:1}
+  .panel.info{background:#DEEBFF;border-left:4px solid #0052CC}
+  .panel.warning{background:#FFFAE6;border-left:4px solid #FF8B00}
+  .panel.success{background:#E3FCEF;border-left:4px solid #00875A}
+  .panel.error{background:#FFEBE6;border-left:4px solid #DE350B}
+  .panel strong{font-weight:600}
+  .metric-row{display:flex;gap:10px;margin:12px 0;flex-wrap:wrap}
+  .metric-card{flex:1;min-width:100px;background:#F4F5F7;border-radius:6px;padding:12px 14px}
+  .metric-card .label{font-size:11px;color:#6B778C;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+  .metric-card .value{font-size:22px;font-weight:700;color:#172B4D;line-height:1.2}
+  .metric-card .sub{font-size:11px;color:#6B778C;margin-top:3px}
+  .wow{display:inline-flex;align-items:center;gap:2px;font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;margin-top:5px;letter-spacing:.02em;white-space:nowrap}
+  .wow-up{background:#E3FCEF;color:#006644}.wow-down{background:#FFEBE6;color:#BF2600}.wow-neutral{background:#F4F5F7;color:#5E6C84}
+  .value.green{color:#00875A!important}.value.red{color:#DE350B!important}.value.orange{color:#FF8B00!important}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+  th{background:#F4F5F7;color:#5E6C84;font-weight:700;font-size:11px;text-align:left;padding:7px 10px;border:1px solid #DFE1E6;white-space:nowrap}
+  td{padding:7px 10px;border:1px solid #DFE1E6;vertical-align:middle;color:#172B4D}
+  tr:nth-child(even) td{background:#FAFBFC}
+  .lozenge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;line-height:1.6;white-space:nowrap}
+  .lg{background:#E3FCEF;color:#006644}.ly{background:#FFFAE6;color:#974F0C}.lr{background:#FFEBE6;color:#BF2600}.lb{background:#DEEBFF;color:#0747A6}.lgr{background:#F4F5F7;color:#5E6C84}.lp{background:#EAE6FF;color:#403294}
+  .code{font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;color:#5E6C84}
+  hr{border:none;border-top:1px solid #DFE1E6;margin:24px 0}
+  p{margin:8px 0}
+  .section-note{font-size:12px;color:#6B778C;margin-bottom:10px}
+  .ads-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:14px 0}
+  .ads-card{border:1px solid #DFE1E6;border-radius:8px;overflow:hidden}
+  .ads-card.has-fdc{border-top:3px solid #00875A}.ads-card.no-conv{border-top:3px solid #FF8B00}.ads-card.zero-spend{border-top:3px solid #B3BAC5}
+  .ads-card-header{padding:10px 14px;background:#F4F5F7;border-bottom:1px solid #DFE1E6;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .ads-card-header .ads-name{font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;color:#172B4D;font-weight:700;flex:1}
+  .ads-card-body{padding:12px 14px;display:flex;gap:16px}
+  .ads-preview{flex-shrink:0;width:110px}
+  .ads-preview img{width:110px;height:110px;object-fit:cover;border-radius:5px;border:1px solid #DFE1E6;display:block}
+  .ads-preview .preview-label{font-size:10px;color:#6B778C;text-align:center;margin-top:4px;line-height:1.4}
+  .ads-kpi-section{flex:1;min-width:0}
+  .kpi-group-label{font-size:10px;color:#6B778C;font-weight:700;letter-spacing:.04em;margin-bottom:4px;margin-top:8px;text-transform:uppercase}
+  .ads-kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-bottom:8px}
+  .ads-kpi{background:#FAFBFC;border:1px solid #EBECF0;border-radius:5px;padding:7px 9px}
+  .ads-kpi .kpi-label{font-size:10px;color:#6B778C;font-weight:500;letter-spacing:.03em;margin-bottom:3px}
+  .ads-kpi .kpi-value{font-size:15px;font-weight:700;color:#172B4D;line-height:1.2}
+  .ads-kpi .kpi-value.green{color:#00875A}.ads-kpi .kpi-value.red{color:#DE350B}.ads-kpi .kpi-value.orange{color:#FF8B00}
+  .ads-tag-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .chart-wrap{position:relative;height:260px;margin:12px 0 6px}
+  .chart-legend{display:flex;gap:18px;font-size:12px;color:#5E6C84;margin-bottom:6px;flex-wrap:wrap}
+  .chart-legend span{display:flex;align-items:center;gap:6px}
+  .legend-box{width:12px;height:12px;border-radius:2px;display:inline-block}
+  .kpi-tracker-table td.pass{background:#E3FCEF;color:#006644;font-weight:700;text-align:center}
+  .kpi-tracker-table td.fail{background:#FFEBE6;color:#BF2600;font-weight:700;text-align:center}
+  .ggr-progress-bar-wrap{background:#EBECF0;border-radius:6px;height:22px;margin:10px 0;overflow:hidden}
+  .ggr-progress-bar{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;white-space:nowrap}
+  .rank-img{width:44px;height:44px;object-fit:cover;border-radius:4px;border:1px solid #DFE1E6;display:block}
+  td.img-cell{width:54px;padding:4px 6px}
+  .ret-mature{background:#E3FCEF;color:#006644;font-size:10px;font-weight:600;padding:1px 5px;border-radius:2px}
+  .ret-partial{background:#FFFAE6;color:#974F0C;font-size:10px;font-weight:600;padding:1px 5px;border-radius:2px}
+  .ret-immature{background:#F4F5F7;color:#5E6C84;font-size:10px;padding:1px 5px;border-radius:2px}
+</style>
+</head>
+<body>
+<div class="page-title">USC - 17WINKH 月报 · 2026年7月</div>
+<div class="page-meta">
+  汇报周期：2026年7月1日（周三）—— 7月31日（周五）&nbsp;·&nbsp; 报告生成：2026年8月5日（周三）&nbsp;·&nbsp; 品牌：17WINKH &nbsp;·&nbsp; 货币：USD
+</div>
+
+<div class="panel info"><div class="panel-icon">📊</div><div class="panel-body">
+  17WINKH 在 Project Files 中暂无 brand_KPI 文件，本报告 L2 周度KPI 目标引用 PART6.3 速查表备用参考（D7 Ads Rate≤0.70、单客户D7A≥$100）；月度GGR无正式目标可比对，仅作MoM趋势参考。
+</div></div>
+
+<!-- §1 月度核心数据概览 -->
+<h2>一 · 月度核心数据概览</h2>
+
+<div class="metric-row">
+  <div class="metric-card"><div class="label">Ads Spend</div><div class="value">$1,770.86</div><div class="sub">6月：$2,837.23</div><span class="wow wow-down">▼ -37.6% MoM</span></div>
+  <div class="metric-card"><div class="label">IMP</div><div class="value">106,183</div><div class="sub">CTR 1.14%</div></div>
+  <div class="metric-card"><div class="label">Link Click</div><div class="value">1,208</div></div>
+  <div class="metric-card"><div class="label">Lead</div><div class="value orange">261</div></div>
+  <div class="metric-card"><div class="label">Chat</div><div class="value">257</div><div class="sub">含Organic Chat 39</div></div>
+  <div class="metric-card"><div class="label">REG</div><div class="value green">109</div><div class="sub">含Organic REG 5</div></div>
+</div>
+<div class="metric-row">
+  <div class="metric-card"><div class="label">总 FDC</div><div class="value">53</div><div class="sub">6月：53人</div></div>
+  <div class="metric-card"><div class="label">总 FDA</div><div class="value">$257.64</div><div class="sub">6月：$285.11</div></div>
+  <div class="metric-card"><div class="label">FDCR</div><div class="value orange">48.6%</div><div class="sub">健康基准&gt;35%</div></div>
+  <div class="metric-card"><div class="label">Avg FD（AFDA）</div><div class="value red">$4.86</div><div class="sub">目标≥$20</div></div>
+  <div class="metric-card"><div class="label">CPA</div><div class="value red">$33.41</div></div>
+  <div class="metric-card"><div class="label">FD Ads Rate</div><div class="value red">6.873</div></div>
+</div>
+<div class="metric-row">
+  <div class="metric-card"><div class="label">SDA（月合计）</div><div class="value green">$1,391.89</div></div>
+  <div class="metric-card"><div class="label">GGR</div><div class="value red">$1,054.37</div><div class="sub">6月：$1,347.49</div><span class="wow wow-down">▼ -21.8% MoM</span></div>
+  <div class="metric-card"><div class="label">Returning Member</div><div class="value">3人</div></div>
+  <div class="metric-card"><div class="label">Returning Deposit</div><div class="value green">$96.00</div></div>
+</div>
+<div class="panel warning"><div class="panel-icon">⚠️</div><div class="panel-body">
+  <strong>7月花费大幅收缩（-37.6% MoM），GGR随之下滑21.7%，但FDC基本持平（54人 vs 6月53人）。</strong>
+  Avg FD（AFDA）仅$4.86，连续多月低于$20目标，FDCR 48.6%接近健康基准（35%）但仍有提升空间。7月投放节奏明显不如6月激进，建议评估是否为主动缩量策略调整，还是预算受限所致。
+</div></div>
+
+
+<!-- §2 全月漏斗表现 -->
+<h2>二 · 全月漏斗表现</h2>
+
+<div style="display:flex;align-items:center;gap:4px;margin:12px 0;flex-wrap:wrap">
+  <div style="flex:1;min-width:70px;text-align:center;background:#DEEBFF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#0747A6;font-weight:700">Ads Spend</div><div style="font-size:20px;font-weight:800;color:#0052CC">$1,771</div>
+    <div style="font-size:10px;color:#6B778C">▼ -37.6% MoM</div></div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#DEEBFF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#0747A6;font-weight:700">Link Click</div><div style="font-size:20px;font-weight:800;color:#0052CC">1,208</div>
+    <div style="font-size:10px;color:#6B778C">CTR 1.14%</div></div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#FFFAE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#974F0C;font-weight:700">Lead</div><div style="font-size:20px;font-weight:800;color:#FF8B00">261</div>
+    <div style="font-size:10px;color:#6B778C">含Organic贡献</div></div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#FFFAE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#974F0C;font-weight:700">Chat</div><div style="font-size:20px;font-weight:800;color:#FF8B00">257</div>
+    <div style="font-size:10px;color:#6B778C">Lead→Chat 98.5%</div></div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#FFFAE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#974F0C;font-weight:700">REG</div><div style="font-size:20px;font-weight:800;color:#FF8B00">109</div>
+    <div style="font-size:10px;color:#6B778C">Chat→REG 42.4%</div></div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#E3FCEF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#006644;font-weight:700">FDC</div><div style="font-size:20px;font-weight:800;color:#00875A">53</div>
+    <div style="font-size:10px;color:#6B778C">FDCR 48.6%</div></div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#FFEBE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#BF2600;font-weight:700">FDA</div><div style="font-size:20px;font-weight:800;color:#DE350B">$258</div>
+    <div style="font-size:10px;color:#6B778C">Avg FD $4.86 ✗</div></div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#E3FCEF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#006644;font-weight:700">GGR</div><div style="font-size:20px;font-weight:800;color:#00875A">$1,054</div>
+    <div style="font-size:10px;color:#6B778C">SDA $1,392</div></div>
+</div>
+
+
+<!-- §3 每周花费与转化趋势 -->
+<h2>三 · 每周花费与转化趋势</h2>
+
+<p class="section-note">W1=7/1–7/7 · W2=7/8–7/14 · W3=7/15–7/21 · W4=7/22–7/28 · W5=7/29–7/31（月末3天）<br>Lead / Chat / REG / FDC / FDA 均按全行聚合（含停投素材转化及 Organic）。</p>
+<div class="chart-legend">
+  <span><span class="legend-box" style="background:#0052CC"></span>Ads Spend ($)</span>
+  <span><span class="legend-box" style="background:#6554C0"></span>SDA ($)</span>
+  <span><span class="legend-box" style="background:#00875A;border-radius:50%"></span>FDC (人)</span>
+  <span><span class="legend-box" style="background:#FF8B00;border-radius:50%"></span>FDA ($)</span>
+</div>
+<div class="chart-wrap"><canvas id="weeklyChart"></canvas></div>
+<table>
+  <tr><th>周次</th><th>周期</th><th>Spend</th><th>IMP</th><th>Clicks</th><th>CTR</th><th>Lead</th><th>Chat</th><th>REG</th><th>FDC</th><th>FDA</th><th>Avg FD</th><th>SDA</th><th>GGR</th></tr>
+  <tr><td><strong>W1</strong></td><td>7/1–7/7</td><td>$538.36</td><td>26,737</td><td>310</td><td>1.16%</td><td>74</td><td>68</td><td>21</td><td>15</td><td>$58.11</td><td>$3.87</td><td>$109.69</td><td>$237.47</td></tr>
+<tr><td><strong>W2</strong></td><td>7/8–7/14</td><td>$450.44</td><td>14,258</td><td>218</td><td>1.53%</td><td>61</td><td>61</td><td>29</td><td>15</td><td>$66.52</td><td>$4.43</td><td>$520.35</td><td>$443.04</td></tr>
+<tr><td><strong>W3</strong></td><td>7/15–7/21</td><td>$116.86</td><td>14,872</td><td>110</td><td>0.74%</td><td>16</td><td>16</td><td>7</td><td>4</td><td>$14.08</td><td>$3.52</td><td>$14.14</td><td>$29.22</td></tr>
+<tr><td><strong>W4</strong></td><td>7/22–7/28</td><td>$444.71</td><td>29,734</td><td>319</td><td>1.07%</td><td>83</td><td>87</td><td>44</td><td>15</td><td>$82.93</td><td>$5.53</td><td>$659.71</td><td>$430.64</td></tr>
+<tr><td><strong>W5</strong></td><td>7/29–7/31</td><td>$220.49</td><td>20,582</td><td>251</td><td>1.22%</td><td>27</td><td>25</td><td>8</td><td>4</td><td>$36.00</td><td>$9.00</td><td>$88.00</td><td>$-86.00</td></tr>
+<tr style='background:#F0F7FF;font-weight:700'><td>合计</td><td>—</td><td>$1,770.86</td><td>106,183</td><td>1208</td><td>1.14%</td><td>261</td><td>257</td><td>109</td><td>53</td><td>$257.64</td><td>$4.86</td><td>$1,391.89</td><td>$1,054.37</td></tr>
+
+</table>
+<div class="panel info" style="margin-top:14px"><div class="panel-icon">ℹ️</div><div class="panel-body">
+  <strong>周度趋势：W2规模与效率兼具，W3骤然缩量，W4反弹放量后W5再度收窄。</strong>
+  W2（7/8–7/14）GGR $443.04全月最高，FDC 16人、CTR 1.53%也是全月最优，是本月效率基准周。W3（7/15–7/21）花费骤降至$116.86（仅为W2的26%），FDC降至4人，为全月流量低谷，需排查是否为预算暂停或素材疲劳所致。W4（7/22–7/28）花费回升至$444.71，FDC 15人、GGR $430.64，REG 44人全月最高，漏斗顶端表现强劲。W5（7/29–7/31，仅3天）GGR为-$86.00，全月唯一周度负值，源于7/29单日大额出金事件。全月来看，Avg FD始终在$3.5–$9区间波动，未有一周稳定达到$20目标。
+</div></div>
+
+
+<!-- §4 KPI月度总结 -->
+<h2>四 · KPI 月度总结</h2>
+
+<h3>L2 · Weekly KPI 评估（D7 Ads Rate ≤0.70 · 单客户D7A（D7A÷D7R）≥$100）</h3>
+<table class="kpi-tracker-table">
+  <tr><th>周次</th><th>周期</th><th>Spend</th><th>FDC</th><th>D7A</th><th>D7 Ads Rate</th><th>Rate≤0.70</th><th>单客户D7A≥$100</th><th>L2综合</th></tr>
+  <tr><td><strong>W1</strong></td><td>7/1–7/7</td><td>$538.36</td><td>15</td><td>$202.60（全熟）</td><td>2.657</td><td class='fail'>✗ 超标</td><td class='fail'>✗ ($33.77)</td><td class='fail'>❌</td></tr>
+<tr><td><strong>W2</strong></td><td>7/8–7/14</td><td>$450.44</td><td>15</td><td>$279.49（全熟）</td><td>1.612</td><td class='fail'>✗ 超标</td><td class='fail'>✗ ($34.94)</td><td class='fail'>❌</td></tr>
+<tr><td><strong>W3</strong></td><td>7/15–7/21</td><td>$116.86</td><td>4</td><td>$12.14（全熟）</td><td>9.626</td><td class='fail'>✗ 超标</td><td class='fail'>✗ ($6.07)</td><td class='fail'>❌</td></tr>
+<tr><td><strong>W4</strong></td><td>7/22–7/28</td><td>$444.71</td><td>15</td><td>$452.38（全熟）</td><td>0.983</td><td class='fail'>✗ 超标</td><td class='fail'>✗ ($56.55)</td><td class='fail'>❌</td></tr>
+<tr><td><strong>W5</strong></td><td>7/29–7/31</td><td>$220.49</td><td>4</td><td>$82.00（全熟）</td><td>2.689</td><td class='fail'>✗ 超标</td><td class='fail'>✗ ($27.33)</td><td class='fail'>❌</td></tr>
+
+</table>
+<div class="panel info" style="margin-top:14px"><div class="panel-icon">ℹ️</div><div class="panel-body">
+  <strong>L2 KPI 月度总结：7月全部5周均未达标，D7 Ads Rate 最优周为W4（0.983），单客户D7A全月最高为W4（$56.55），但仍远低于$100目标。</strong>
+  W3 D7 Ads Rate高达9.626，是全月表现最差的一周（花费$116.86而D7A仅$12.14），核心问题是W3流量骤降后仅有的4笔FDC质量也偏低。W1/W2/W5虽花费与FDC规模尚可，但单客户回存金额（$27–$35区间）距$100目标差距巨大，反映17WINKH玩家群体整体客单价偏低，是贯穿全月的结构性问题。
+</div></div>
+
+
+<h3>月度 GGR 对比 — 6月 vs 7月（无月度目标，brand_KPI文件缺失）</h3>
+<div class="panel warning"><div class="panel-icon">⚠️</div><div class="panel-body">
+  <strong>17WINKH 在 Project Files 与 PART6.3 速查表中均无月度 GGR 目标数值，本节仅作 MoM 对比参考，不做达成率判断。</strong>
+</div></div>
+<div class="metric-row">
+  <div class="metric-card"><div class="label">6月 GGR</div><div class="value">$1,347.49</div><div class="sub">花费 $2,837.23</div></div>
+  <div class="metric-card"><div class="label">7月 GGR</div><div class="value red">$1,054.37</div><div class="sub">花费 $1,770.86 · -21.8% MoM</div></div>
+  <div class="metric-card"><div class="label">7月 FDC</div><div class="value">53人</div><div class="sub">6月：53人</div></div>
+  <div class="metric-card"><div class="label">MoM 花费变化</div><div class="value red">-37.6%</div><div class="sub">花费缩减明显快于GGR降幅</div></div>
+</div>
+<div class="panel error"><div class="panel-icon">🚨</div><div class="panel-body">
+  <strong>7月 GGR 较6月下降21.7%，花费降幅（-37.6%）更大，说明单位花费的产出效率实际有所提升，但整体规模在收缩。</strong>
+  建议明确7月缩量是否为主动策略调整；若非主动，需尽快评估是否恢复投放规模以避免GGR持续下滑。
+</div></div>
+
+
+<!-- §5 月度素材表现 -->
+<h2>五 · 月度广告素材表现</h2>
+
+<p class="section-note">按月度 FDC 降序排列 · 支出侧仅聚合 Ads_Spend&gt;0 行，转化侧聚合全部行 · Organic_17WINKH（Chat39/REG5/RD$93.00，无FDC）未单独建卡</p>
+<div class="ads-grid">
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_2473_KH01</div>
+    <span class="lozenge lg">有转化</span>
+    <span class="lozenge lb">月度FDC最多 · 月度花费最高</span>
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLy_zX4cR5M7ofkXo0uYf1YqCjAUPfK08sfdetdMuvp7SUo8wf-XGDQ5yegVZXaMuiq_cydzhJfHLPrc1dLN_FJk236BTGFYl3RA4lAZ2avqhZBwelXpMBm-mhl5k4NRer6oakjL6XKnQjZ8fz_mWWk" alt="VD_2473_KH01" onerror="this.style.background='#F4F5F7'"><div class="preview-label">24/7 + slot + AI girl</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$322.17</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">14,080</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">181</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.29%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$22.88</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">51</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">47</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">19</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">11</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$44.49</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$4.04</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$344.07</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$304.23</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">月度花费最高（$322.17）、FDC最多（11人），GGR $304.23排第二。规模最大的核心素材，Avg FD $4.04偏低，是走量主力。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_IM_SLT1_KH02</div>
+    <span class="lozenge lg">有转化</span>
+    <span class="lozenge lb">月度GGR最高</span>
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQL1qp2EESFkYhc-1PMiaRXUPAqbOWU3jknhmv_zbXm4EoYuo6AJ1dNYrr4r_mFrLnZI5cw-8KWV53AKKLswY6G5bWUpOshg1HoILZKow4x9vEiXtCB7R6vHz-yUUkGXGWWREDoPNPKrzAhuvKmm1bYS" alt="IM_SLT1_KH02" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Jili Boxing King + AI girl image</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$160.22</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">16,805</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">181</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.08%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$9.53</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">32</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">26</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">14</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">8</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$70.88</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$8.86</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$388.83</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$249.71</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">月度GGR最高（$249.71），FDC 8人、Avg FD $8.86为本组较优水平，图片+老虎机组合本月表现最佳。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_SLT1_KH05</div>
+    <span class="lozenge lg">有转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQKWQJ43IwQk7O-k5m97aYeowRU3CLjh1fRy7iw25RY2HKCat7o8Diy1Yw4VW3vhac86MFe99uKhsZaGOmOkEzseBftqVp76YewZKc80lhGWof3x9OxIMRSx9t9rJ-d-uzely03sy6mtCEe60a8LUFw2" alt="VD_SLT1_KH05" onerror="this.style.background='#F4F5F7'"><div class="preview-label">JILI Boxing King + AI girl</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$153.24</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">5,257</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">78</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.48%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$29.15</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">22</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">14</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">7</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$24.11</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$4.82</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$118.72</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$62.83</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$153.24、FDC 5人，GGR $62.83，Avg FD $4.82，效率尚可。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_SLT2_KH01</div>
+    <span class="lozenge lg">有转化</span>
+    <span class="lozenge lb">GGR效率突出（低花费高GGR）</span>
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://inz9-huat.com/USC_Pbi_report_assets/USC_WIKH_TRSA_VD_SLT2_KH01.jpg" alt="VD_SLT2_KH01" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Ways of Qilin Slot + Promo + AI girl</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$131.72</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">6,711</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">73</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.09%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$19.63</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">17</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">10</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$19.44</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$3.89</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$15.04</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$169.54</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费仅$131.72但GGR达$169.54，为本月GGR/花费比最优素材之一，建议评估扩量潜力。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_SLT2_KH02</div>
+    <span class="lozenge lg">有转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLSKiVg3qssS1nv_RZ6ztnhBeRg2CLfyUv4nLgCHV33d4HLBhhtFvf11ie379FI4pG2hRD2zydLJ6MmPn_2dut3V_cSNx6WejTzs-Mu8-78OVaz-8c4Bcy6VVmtmBAtfX3hbhTPwkhuXdWS5levHoDV" alt="VD_SLT2_KH02" onerror="this.style.background='#F4F5F7'"><div class="preview-label">JILI Boxing King + AI girl + Text</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$112.57</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">3,033</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">56</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.85%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$37.12</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">15</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">11</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">6</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$19.55</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$3.91</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$33.21</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value red">$-14.15</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$112.57、FDC 5人，GGR为-$14.15，本月唯一GGR负值较明显的素材，需结合D30观察长期价值。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_WD1_KH01</div>
+    <span class="lozenge lg">有转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLGKHMGhbPwa3S3gcQmNmB0fDAXxpkhA1TDXfRseGmSFBjKxMbW1BjD2iK3E5_tGWQ6ZedvIeunbFyHSRnF5arlRy55FQnb-FHVrOm4FACnlAL3scEnT6H0olQCoo7uMoPOlPfyumPzetYAywMBLT1-" alt="VD_WD1_KH01" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Withdraw notification + Big win + 24/7</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$156.38</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">9,201</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">120</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.30%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$17.00</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">28</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">25</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">13</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">4</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$22.88</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$5.72</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$149.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$30.88</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$156.38、FDC 5人，GGR $30.88，表现中规中矩，为长期稳定投放素材。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_SLT1_KH04</div>
+    <span class="lozenge lg">有转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLwyFaVvaFra7FPuoucv7nJNTayJjLyPSf2E5a936X4Q7Ojy6Wuj0tkn1YobERVY71RX9Pki9nB8In-YLwc8X002jGkms63z9ViRYXt1w88oQ0BL3kEAT9s8TN5Wdw3SfVxiyf7GcCvgYkeCUPGHnBz" alt="VD_SLT1_KH04" onerror="this.style.background='#F4F5F7'"><div class="preview-label">JILI Boxing King + AI girl voice over</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$91.16</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">6,001</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">56</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">0.93%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$15.19</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">9</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">7</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">4</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">4</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$15.04</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$3.76</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$55.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$151.06</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$91.16、FDC 4人，GGR $151.06，GGR/花费比表现优异。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_SLT2_KH03</div>
+    <span class="lozenge lg">有转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLlDHy3kYV8IhP11bMrJ8PcnUJwd_WkPv8RR2Pn5U403px2wcocV7Ii53W-8YCvC0vHiLC0mtpC037P1nJAVSX5SxpAGFr6_MJpRgt92uxmxVT9btruGEpFEKuUXhmwGM-lfbBpkjlkq2Sp7KoOUXqe" alt="VD_SLT2_KH03" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Ways of Qilin Slot + AI girl</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$279.32</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">10,985</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">178</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.62%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$25.43</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">39</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">36</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">15</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">3</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$9.25</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$3.08</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$10.14</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$13.39</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84"></div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_IM_LVE2_KH01</div>
+    <span class="lozenge lg">有转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQJh1tYnenhEWLdWWI-Au0n4_KrEbL0wz0SI6MZzssktWkd9S1ItPP4rGzfgHCE8akQM6EIPMq_H2vKoeOsJmSic0_D5NueJsoWbaqTaEamEkhBbmMxflcUuC4kBuaU2AxrS12gI-4JA1BM3DyOdLwZg" alt="IM_LVE2_KH01" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Live Sicbo + AI girl (no title)</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$114.65</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">15,965</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">137</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">0.86%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$7.18</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">12</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">11</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">3</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">2</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$8.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$4.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$21.88</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value red">$-4.12</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$114.65、FDC 2人，GGR为-$4.12（轻微负值，小额出金所致），整体规模效应尚未显现。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_2473_KH02</div>
+    <span class="lozenge lg">有转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQKzQLL-3abw3GpcrQQ5myWnrbZackjrZlCOtLtePL4UhYWgd7YN9svhCN4tbbRS6dorQ7ctiTTeOUk70C9iyNLgqDOlynoSKwTPxYkRp7FKLWONErElBowJ3BL6_vjsxnP934JmvbincCNNExJ0Spi2" alt="VD_2473_KH02" onerror="this.style.background='#F4F5F7'"><div class="preview-label">24/7 + slot + AI girl</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$78.02</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">4,489</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">52</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.16%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$17.38</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">19</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">16</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">8</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">2</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$6.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$3.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$172.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$98.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$78.02、FDC 2人，GGR $98.00，效率良好但规模较小。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_LVE2_KH02</div>
+    <span class="lozenge lg">有转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQL6ACSQgXWP_TBO8ieySv9qQr1V26hj8i1dubkJdS6TFnh-LJTa5y4FeDDyOYnvwV1_oUflTISfbgusE9Z3zt4n3U-ZP-yEFVCr62RPVR3mngcd8IyJfIWIKWLVZkTOONI8MSBJELHAbS0z7Lh9RwBh" alt="VD_LVE2_KH02" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Live Sicbo + AI girl (no title)</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$42.58</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">3,507</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">25</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">0.71%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$12.14</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">3</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">2</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$10.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$5.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$84.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value red">$-5.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$42.58、FDC 2人，GGR为-$5.00，小规模测试中。</div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_2474_KH01</div>
+    <span class="lozenge lg">有转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLhuHuJMfRDZNlqAdIom5t1Ypupzh28Bu_TZd524btOKEV828-msEAFFuOXscAMW27Smx6C0GelPv_216pzcdSiVdaeKODHGmKLRsN_VcEGh07nWXsepjVH2oZpv9AHEeqzh6cEHgQVZ3c7BQ8JtDBl" alt="VD_2474_KH01" onerror="this.style.background='#F4F5F7'"><div class="preview-label">24/7 + AI girl + 2 slotgame</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$45.01</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">1,299</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">10</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">0.77%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$34.65</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$3.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value red">$3.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$0.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$3.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">7/23上线新素材，花费$45.01、FDC 1人，规模尚小，建议继续观察。</div>
+</div>
+
+<div class="ads-card no-conv">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_SLT3_KH01</div>
+    <span class="lozenge ly">本月零转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQJ4-Jd1InP25LEDVxicSEitBsmdSnw6bzIwBQ9-fwe9hXx_fYIAlG7GvXRQylNwgafuG7hvq8o0UlHrFaREudKfb-KsmjFUNRQbAY0ugrqrFasAPTLGfp-WyOW6sTZTrJ5XxB_vbDkrpSx6NXEQJsiH" alt="VD_SLT3_KH01" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Ways of Qilin Slot + Jackie Chan Deepfake</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$38.79</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">774</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">10</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.29%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$50.12</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">2</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$0.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value green">—</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$0.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$0.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$38.79，仅2天投放，Lead2/REG1，本月零转化。</div>
+</div>
+
+<div class="ads-card no-conv">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_LVE3_KH02</div>
+    <span class="lozenge ly">本月零转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLgwcn4ru4YBMkYC1-zvDo9FUpIxWQV1pWjsBtmVpBmklq7dt5gQQARC5MNO7yaCNNfE-tyMrU6mu7nxgR_9q1Qk4CtYcgUEmmh-t76IdKBPd0K6u9XfqSUwPbXPe6sPH--bt9MuQxt4o2vuMX7xXlb" alt="VD_LVE3_KH02" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Live Roulette + AI girl (no title)</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$33.59</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">5,452</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">39</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">0.72%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$6.16</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">4</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">3</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$0.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value green">—</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$0.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$0.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$33.59（10天投放），Lead4/REG1，本月零转化，效率偏低。</div>
+</div>
+
+<div class="ads-card no-conv">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_IM_LVE1_KH01</div>
+    <span class="lozenge ly">本月零转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLWSe4ovrveaD0T41CncJc5wlnOhGyoIsY9zw5AuwT7QGmbejlClOY7aEBnYUI2cPKcumHfz3rju_9tbZljPubeWWncqtNPRvQ3QWpwR_iHu88NeWCbRUKCJlt4ttKUxtWR9-auBBwC-nRpSy4kum65" alt="IM_LVE1_KH01" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Live Baccarat + AI girl (no title)</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$9.92</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">1,935</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">12</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">0.62%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$5.13</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$0.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value green">—</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$0.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$0.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费$9.92，小额测试，本月零转化。</div>
+</div>
+
+<div class="ads-card no-conv">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_SLT2_KH04</div>
+    <span class="lozenge ly">本月零转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLiTmKjdUkU93MInuN_nJ2kNWBmVP-D8SokZ6Z_dBijQXo6C_n7lHKjPrLKPfe4V4dYSIGWOrzgrmwn_RvTzPwmTmpnkwy0jocYLVWOtzyBZEv7X-bc2zbwVF5EnSfC7WTKx8FFIQU4lCt8pIQUQWcb" alt="VD_SLT2_KH04" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Ways of Qilin Slot + AI girl</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$1.15</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">15</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">0.00%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$76.67</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$0.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value green">—</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$0.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$0.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费仅$1.15，样本过小不具参考价值。</div>
+</div>
+
+<div class="ads-card no-conv">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_IM_2473_KH01</div>
+    <span class="lozenge ly">本月零转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLAlcnmq7ej5MDbA6aV2enlleYaoGPFY6zXGB9O114gaPcByTEzTq9W56O7R2sCvG0H8IWyZO32Pj7ha4AVf-o7E0DdeOVxU3lt6PP4pNdwYW9n6NkirnKPNtfXgkBQ9SxofTR-KdjILqljcGpiO-mI" alt="IM_2473_KH01" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Slot + 24/7 Support Service image</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$0.25</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">28</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">0.00%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$8.93</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$0.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value green">—</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$0.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$0.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">花费仅$0.25，样本过小不具参考价值。</div>
+</div>
+
+<div class="ads-card no-conv">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRAW_VD_SE2_KH01</div>
+    <span class="lozenge ly">本月零转化</span>
+    
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLXONNTlMSABns_kyEVvcClBL6Qcy9UOX1xqhKjqoSA4k1uJpFWzA8Y3Bbm0FIvUO69kI5agREkMGF_5Teml2V0YKpPLnX_VoPK5qqpdv3Qz6tYsaqf1_nVPbvcanQy9cjPKW_QSXui1TyittU_S8In" alt="VD_SE2_KH01" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Special Event Awareness + AI girl</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$0.12</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">646</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">0.00%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$0.19</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Lead</div><div class="kpi-value green">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Chat</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">REG</div><div class="kpi-value">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value green">0</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$0.00</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Avg FD</div><div class="kpi-value green">—</div></div>
+        <div class="ads-kpi"><div class="kpi-label">SDA</div><div class="kpi-value green">$0.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value green">$0.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">TRAW品牌曝光类素材，花费仅$0.12，非销售导向，不纳入转化评估。</div>
+</div>
+
+
+<div class="ads-card zero-spend">
+  <div class="ads-card-header">
+    <div class="ads-name">USC_WIKH_TRSA_VD_SLT1_KH03</div>
+    <span class="lozenge lgr">零花费转化 · 素材已停投</span>
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLXYb2RZ9F5HirIX3w_LwvPL6M899oOUPPJDKBhbokE6nQB_IVPiaLtErgn0d2Z6wQ0Rd9HJh5adiMrOw-1zBxInPUhixhrCninOKcuPZKeVQqy1As-aQeCqOWzAZbfFwSJfrP8PE3Nfls8VzYoehtV" alt="SLT1_KH03" onerror="this.style.background='#F4F5F7'"><div class="preview-label">Lucky Neko Slot + AI girl</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">💰 转化侧（本月无花费记录）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">FDC</div><div class="kpi-value">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA</div><div class="kpi-value">$5.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR</div><div class="kpi-value red">-$5.00</div></div>
+      </div>
+      <div class="ads-tag-row"></div>
+    </div>
+  </div>
+  <div style="padding:0 14px 12px;font-size:11px;color:#5E6C84">素材本月无任何广告花费记录（已停投），但仍有历史玩家在此ads_code下完成1笔首存（$5.00），后续发生小额出金（GGR -$5.00）。按PART2.3规则计入转化侧，不受花费侧过滤影响。</div>
+</div>
+
+</div>
+
+
+<!-- §6 月度素材综合排名 -->
+<h2>六 · 月度素材综合排名</h2>
+
+<p class="section-note">按月度 GGR 降序。支出侧仅含 Ads_Spend&gt;0 行，转化侧含全部行。零花费素材另注。</p>
+<table>
+  <tr><th class="img-cell">预览</th><th>#</th><th>素材</th><th>描述</th><th>Spend</th><th>FDC</th><th>Avg FD</th><th>FDA</th><th>SDA</th><th>GGR</th><th>CTR</th><th>CPM</th></tr>
+  <tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLy_zX4cR5M7ofkXo0uYf1YqCjAUPfK08sfdetdMuvp7SUo8wf-XGDQ5yegVZXaMuiq_cydzhJfHLPrc1dLN_FJk236BTGFYl3RA4lAZ2avqhZBwelXpMBm-mhl5k4NRer6oakjL6XKnQjZ8fz_mWWk" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_247</div>'"></td>
+<td>1</td><td><span class="code">VD_2473_KH01</span></td><td>24/7 + slot + AI girl</td>
+<td>$322.17</td><td style="color:#00875A;font-weight:700">11</td><td>$4.04</td><td>$44.49</td><td style="color:#00875A">$344.07</td><td style="color:#00875A;font-weight:700">$304.23</td><td>1.29%</td><td>$22.88</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQL1qp2EESFkYhc-1PMiaRXUPAqbOWU3jknhmv_zbXm4EoYuo6AJ1dNYrr4r_mFrLnZI5cw-8KWV53AKKLswY6G5bWUpOshg1HoILZKow4x9vEiXtCB7R6vHz-yUUkGXGWWREDoPNPKrzAhuvKmm1bYS" alt="" onerror="this.outerHTML='<div class=rank-no-img>IM_SLT</div>'"></td>
+<td>2</td><td><span class="code">IM_SLT1_KH02</span></td><td>Jili Boxing King + AI girl image</td>
+<td>$160.22</td><td style="color:#00875A;font-weight:700">8</td><td>$8.86</td><td>$70.88</td><td style="color:#00875A">$388.83</td><td style="color:#00875A;font-weight:700">$249.71</td><td>1.08%</td><td>$9.53</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://inz9-huat.com/USC_Pbi_report_assets/USC_WIKH_TRSA_VD_SLT2_KH01.jpg" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_SLT</div>'"></td>
+<td>3</td><td><span class="code">VD_SLT2_KH01</span></td><td>Ways of Qilin Slot + Promo + AI girl</td>
+<td>$131.72</td><td style="color:#00875A;font-weight:700">5</td><td>$3.89</td><td>$19.44</td><td style="color:#00875A">$15.04</td><td style="color:#00875A;font-weight:700">$169.54</td><td>1.09%</td><td>$19.63</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLwyFaVvaFra7FPuoucv7nJNTayJjLyPSf2E5a936X4Q7Ojy6Wuj0tkn1YobERVY71RX9Pki9nB8In-YLwc8X002jGkms63z9ViRYXt1w88oQ0BL3kEAT9s8TN5Wdw3SfVxiyf7GcCvgYkeCUPGHnBz" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_SLT</div>'"></td>
+<td>4</td><td><span class="code">VD_SLT1_KH04</span></td><td>JILI Boxing King + AI girl voice over</td>
+<td>$91.16</td><td style="color:#00875A;font-weight:700">4</td><td>$3.76</td><td>$15.04</td><td style="color:#00875A">$55.00</td><td style="color:#00875A;font-weight:700">$151.06</td><td>0.93%</td><td>$15.19</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQKzQLL-3abw3GpcrQQ5myWnrbZackjrZlCOtLtePL4UhYWgd7YN9svhCN4tbbRS6dorQ7ctiTTeOUk70C9iyNLgqDOlynoSKwTPxYkRp7FKLWONErElBowJ3BL6_vjsxnP934JmvbincCNNExJ0Spi2" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_247</div>'"></td>
+<td>5</td><td><span class="code">VD_2473_KH02</span></td><td>24/7 + slot + AI girl</td>
+<td>$78.02</td><td style="color:#00875A;font-weight:700">2</td><td>$3.00</td><td>$6.00</td><td style="color:#00875A">$172.00</td><td style="color:#00875A;font-weight:700">$98.00</td><td>1.16%</td><td>$17.38</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQKWQJ43IwQk7O-k5m97aYeowRU3CLjh1fRy7iw25RY2HKCat7o8Diy1Yw4VW3vhac86MFe99uKhsZaGOmOkEzseBftqVp76YewZKc80lhGWof3x9OxIMRSx9t9rJ-d-uzely03sy6mtCEe60a8LUFw2" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_SLT</div>'"></td>
+<td>6</td><td><span class="code">VD_SLT1_KH05</span></td><td>JILI Boxing King + AI girl</td>
+<td>$153.24</td><td style="color:#00875A;font-weight:700">5</td><td>$4.82</td><td>$24.11</td><td style="color:#00875A">$118.72</td><td style="color:#00875A;font-weight:700">$62.83</td><td>1.48%</td><td>$29.15</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLGKHMGhbPwa3S3gcQmNmB0fDAXxpkhA1TDXfRseGmSFBjKxMbW1BjD2iK3E5_tGWQ6ZedvIeunbFyHSRnF5arlRy55FQnb-FHVrOm4FACnlAL3scEnT6H0olQCoo7uMoPOlPfyumPzetYAywMBLT1-" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_WD1</div>'"></td>
+<td>7</td><td><span class="code">VD_WD1_KH01</span></td><td>Withdraw notification + Big win + 24/7</td>
+<td>$156.38</td><td style="color:#00875A;font-weight:700">4</td><td>$5.72</td><td>$22.88</td><td style="color:#00875A">$149.00</td><td style="color:#00875A;font-weight:700">$30.88</td><td>1.30%</td><td>$17.00</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLlDHy3kYV8IhP11bMrJ8PcnUJwd_WkPv8RR2Pn5U403px2wcocV7Ii53W-8YCvC0vHiLC0mtpC037P1nJAVSX5SxpAGFr6_MJpRgt92uxmxVT9btruGEpFEKuUXhmwGM-lfbBpkjlkq2Sp7KoOUXqe" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_SLT</div>'"></td>
+<td>8</td><td><span class="code">VD_SLT2_KH03</span></td><td>Ways of Qilin Slot + AI girl</td>
+<td>$279.32</td><td style="color:#00875A;font-weight:700">3</td><td>$3.08</td><td>$9.25</td><td style="color:#00875A">$10.14</td><td style="color:#00875A;font-weight:700">$13.39</td><td>1.62%</td><td>$25.43</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLhuHuJMfRDZNlqAdIom5t1Ypupzh28Bu_TZd524btOKEV828-msEAFFuOXscAMW27Smx6C0GelPv_216pzcdSiVdaeKODHGmKLRsN_VcEGh07nWXsepjVH2oZpv9AHEeqzh6cEHgQVZ3c7BQ8JtDBl" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_247</div>'"></td>
+<td>9</td><td><span class="code">VD_2474_KH01</span></td><td>24/7 + AI girl + 2 slotgame</td>
+<td>$45.01</td><td style="color:#00875A;font-weight:700">1</td><td>$3.00</td><td>$3.00</td><td style="color:#00875A">$0.00</td><td style="color:#00875A;font-weight:700">$3.00</td><td>0.77%</td><td>$34.65</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQJ4-Jd1InP25LEDVxicSEitBsmdSnw6bzIwBQ9-fwe9hXx_fYIAlG7GvXRQylNwgafuG7hvq8o0UlHrFaREudKfb-KsmjFUNRQbAY0ugrqrFasAPTLGfp-WyOW6sTZTrJ5XxB_vbDkrpSx6NXEQJsiH" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_SLT</div>'"></td>
+<td>10</td><td><span class="code">VD_SLT3_KH01</span></td><td>Ways of Qilin Slot + Jackie Chan Deepfake</td>
+<td>$38.79</td><td style="color:#DE350B;font-weight:700">0</td><td>—</td><td>$0.00</td><td style="color:#00875A">$0.00</td><td style="color:#00875A;font-weight:700">$0.00</td><td>1.29%</td><td>$50.12</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLgwcn4ru4YBMkYC1-zvDo9FUpIxWQV1pWjsBtmVpBmklq7dt5gQQARC5MNO7yaCNNfE-tyMrU6mu7nxgR_9q1Qk4CtYcgUEmmh-t76IdKBPd0K6u9XfqSUwPbXPe6sPH--bt9MuQxt4o2vuMX7xXlb" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_LVE</div>'"></td>
+<td>11</td><td><span class="code">VD_LVE3_KH02</span></td><td>Live Roulette + AI girl (no title)</td>
+<td>$33.59</td><td style="color:#DE350B;font-weight:700">0</td><td>—</td><td>$0.00</td><td style="color:#00875A">$0.00</td><td style="color:#00875A;font-weight:700">$0.00</td><td>0.72%</td><td>$6.16</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLWSe4ovrveaD0T41CncJc5wlnOhGyoIsY9zw5AuwT7QGmbejlClOY7aEBnYUI2cPKcumHfz3rju_9tbZljPubeWWncqtNPRvQ3QWpwR_iHu88NeWCbRUKCJlt4ttKUxtWR9-auBBwC-nRpSy4kum65" alt="" onerror="this.outerHTML='<div class=rank-no-img>IM_LVE</div>'"></td>
+<td>12</td><td><span class="code">IM_LVE1_KH01</span></td><td>Live Baccarat + AI girl (no title)</td>
+<td>$9.92</td><td style="color:#DE350B;font-weight:700">0</td><td>—</td><td>$0.00</td><td style="color:#00875A">$0.00</td><td style="color:#00875A;font-weight:700">$0.00</td><td>0.62%</td><td>$5.13</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLiTmKjdUkU93MInuN_nJ2kNWBmVP-D8SokZ6Z_dBijQXo6C_n7lHKjPrLKPfe4V4dYSIGWOrzgrmwn_RvTzPwmTmpnkwy0jocYLVWOtzyBZEv7X-bc2zbwVF5EnSfC7WTKx8FFIQU4lCt8pIQUQWcb" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_SLT</div>'"></td>
+<td>13</td><td><span class="code">VD_SLT2_KH04</span></td><td>Ways of Qilin Slot + AI girl</td>
+<td>$1.15</td><td style="color:#DE350B;font-weight:700">0</td><td>—</td><td>$0.00</td><td style="color:#00875A">$0.00</td><td style="color:#00875A;font-weight:700">$0.00</td><td>0.00%</td><td>$76.67</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLAlcnmq7ej5MDbA6aV2enlleYaoGPFY6zXGB9O114gaPcByTEzTq9W56O7R2sCvG0H8IWyZO32Pj7ha4AVf-o7E0DdeOVxU3lt6PP4pNdwYW9n6NkirnKPNtfXgkBQ9SxofTR-KdjILqljcGpiO-mI" alt="" onerror="this.outerHTML='<div class=rank-no-img>IM_247</div>'"></td>
+<td>14</td><td><span class="code">IM_2473_KH01</span></td><td>Slot + 24/7 Support Service image</td>
+<td>$0.25</td><td style="color:#DE350B;font-weight:700">0</td><td>—</td><td>$0.00</td><td style="color:#00875A">$0.00</td><td style="color:#00875A;font-weight:700">$0.00</td><td>0.00%</td><td>$8.93</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLXONNTlMSABns_kyEVvcClBL6Qcy9UOX1xqhKjqoSA4k1uJpFWzA8Y3Bbm0FIvUO69kI5agREkMGF_5Teml2V0YKpPLnX_VoPK5qqpdv3Qz6tYsaqf1_nVPbvcanQy9cjPKW_QSXui1TyittU_S8In" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_SE2</div>'"></td>
+<td>15</td><td><span class="code">VD_SE2_KH01</span></td><td>Special Event Awareness + AI girl</td>
+<td>$0.12</td><td style="color:#DE350B;font-weight:700">0</td><td>—</td><td>$0.00</td><td style="color:#00875A">$0.00</td><td style="color:#00875A;font-weight:700">$0.00</td><td>0.00%</td><td>$0.19</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQJh1tYnenhEWLdWWI-Au0n4_KrEbL0wz0SI6MZzssktWkd9S1ItPP4rGzfgHCE8akQM6EIPMq_H2vKoeOsJmSic0_D5NueJsoWbaqTaEamEkhBbmMxflcUuC4kBuaU2AxrS12gI-4JA1BM3DyOdLwZg" alt="" onerror="this.outerHTML='<div class=rank-no-img>IM_LVE</div>'"></td>
+<td>16</td><td><span class="code">IM_LVE2_KH01</span></td><td>Live Sicbo + AI girl (no title)</td>
+<td>$114.65</td><td style="color:#00875A;font-weight:700">2</td><td>$4.00</td><td>$8.00</td><td style="color:#00875A">$21.88</td><td style="color:#DE350B;font-weight:700">$-4.12</td><td>0.86%</td><td>$7.18</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQL6ACSQgXWP_TBO8ieySv9qQr1V26hj8i1dubkJdS6TFnh-LJTa5y4FeDDyOYnvwV1_oUflTISfbgusE9Z3zt4n3U-ZP-yEFVCr62RPVR3mngcd8IyJfIWIKWLVZkTOONI8MSBJELHAbS0z7Lh9RwBh" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_LVE</div>'"></td>
+<td>17</td><td><span class="code">VD_LVE2_KH02</span></td><td>Live Sicbo + AI girl (no title)</td>
+<td>$42.58</td><td style="color:#00875A;font-weight:700">2</td><td>$5.00</td><td>$10.00</td><td style="color:#00875A">$84.00</td><td style="color:#DE350B;font-weight:700">$-5.00</td><td>0.71%</td><td>$12.14</td>
+</tr>
+<tr>
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLSKiVg3qssS1nv_RZ6ztnhBeRg2CLfyUv4nLgCHV33d4HLBhhtFvf11ie379FI4pG2hRD2zydLJ6MmPn_2dut3V_cSNx6WejTzs-Mu8-78OVaz-8c4Bcy6VVmtmBAtfX3hbhTPwkhuXdWS5levHoDV" alt="" onerror="this.outerHTML='<div class=rank-no-img>VD_SLT</div>'"></td>
+<td>18</td><td><span class="code">VD_SLT2_KH02</span></td><td>JILI Boxing King + AI girl + Text</td>
+<td>$112.57</td><td style="color:#00875A;font-weight:700">5</td><td>$3.91</td><td>$19.55</td><td style="color:#00875A">$33.21</td><td style="color:#DE350B;font-weight:700">$-14.15</td><td>1.85%</td><td>$37.12</td>
+</tr>
+<tr style="color:#6B778C">
+<td class="img-cell"><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLXYb2RZ9F5HirIX3w_LwvPL6M899oOUPPJDKBhbokE6nQB_IVPiaLtErgn0d2Z6wQ0Rd9HJh5adiMrOw-1zBxInPUhixhrCninOKcuPZKeVQqy1As-aQeCqOWzAZbfFwSJfrP8PE3Nfls8VzYoehtV" alt=""></td>
+<td>—</td><td><span class="code">SLT1_KH03*</span></td><td>Lucky Neko Slot + AI girl（零花费转化·已停投）</td>
+<td>$0.00*</td><td>1</td><td>$5.00</td><td>$5.00</td><td>—</td><td style="color:#DE350B">-$5.00</td><td>—</td><td>—</td>
+</tr>
+
+</table>
+<p style="font-size:11px;color:#6B778C">* SLT1_KH03 本月无任何广告花费，转化来自历史停投前遗留玩家的自然回存，不计入花费侧统计。</p>
+<div class="panel info" style="margin-top:14px"><div class="panel-icon">ℹ️</div><div class="panel-body">
+  <strong>排名总结：IM_SLT1_KH02质效最优，VD_2473_KH01量最大，SLT2_KH02是本月唯一明显负GGR素材。</strong>
+  IM_SLT1_KH02（GGR $249.71，Avg FD $8.86）是本月效率与规模兼具的核心素材。VD_2473_KH01花费/FDC均全月最高（$322.17/11人），是走量主力但Avg FD仅$4.04偏低。SLT2_KH01以$131.72花费撬动$169.54 GGR，GGR/花费比全月最优，建议重点评估扩量。SLT2_KH02 GGR为-$14.15，是本月唯一较明显负值素材，需结合D30数据判断是否为大额出金个案还是素材本身问题。多支小额测试素材（SLT2_KH04/IM_2473_KH01/SE2_KH01）花费均低于$2，样本过小暂不纳入优化决策。
+</div></div>
+
+
+<!-- §7 留存层(按周) -->
+<h2>七 · 玩家留存层数据</h2>
+
+<p class="section-note">
+  报告生成日：2026年8月5日（周三）。成熟条件以「报告生成日−首存日」计算：diff≥7d→D7成熟；≥15d→D15成熟；≥30d→D30成熟。<br>
+  W1（7/1–7/7）：最晚首存diff=29d(7/7实际无FDC，最晚有效为7/6 diff=30d)，D7/D15/D30全熟。W2（7/8–7/14）：D7/D15全熟，D30全未熟（最晚diff=22d）。
+  W3（7/15–7/21）：D7/D15全熟（最晚7/21 diff=15d），D30全未熟。W4（7/22–7/28）：D7全熟，D15/D30全未熟（最晚7/28 diff=8d）。
+  W5（7/29–7/31）：仅7/29有FDC（diff=7d，D7刚好成熟），D15/D30未熟。
+</p>
+<table>
+  <tr><th>首存周</th><th>周期</th><th>FDC</th><th>FDA</th><th>Avg FD</th>
+  <th>D7A</th><th>D7R</th><th>D7 状态</th>
+  <th>D15A</th><th>D15 状态</th>
+  <th>D30A</th><th>D30 状态</th></tr>
+  <tr>
+<td><strong>W1</strong></td><td>7/1–7/7</td><td>15</td><td>$58.11</td><td>$3.87</td>
+<td><strong>$202.60</strong></td><td>6</td><td><span class="ret-mature">✓ 全熟</span></td>
+<td>$395.62</td><td><span class="ret-mature">✓ 全熟</span></td>
+<td>$659.67</td><td><span class="ret-mature">✓ 全熟</span></td>
+</tr>
+<tr>
+<td><strong>W2</strong></td><td>7/8–7/14</td><td>15</td><td>$66.52</td><td>$4.43</td>
+<td><strong>$279.49</strong></td><td>8</td><td><span class="ret-mature">✓ 全熟</span></td>
+<td>$376.31</td><td><span class="ret-mature">✓ 全熟</span></td>
+<td>$511.01（当前快照·仍在累积）</td><td><span class="ret-immature">— 未成熟</span></td>
+</tr>
+<tr>
+<td><strong>W3</strong></td><td>7/15–7/21</td><td>4</td><td>$14.08</td><td>$3.52</td>
+<td><strong>$12.14</strong></td><td>2</td><td><span class="ret-mature">✓ 全熟</span></td>
+<td>$17.14</td><td><span class="ret-mature">✓ 全熟</span></td>
+<td>$17.14（当前快照·仍在累积）</td><td><span class="ret-immature">— 未成熟</span></td>
+</tr>
+<tr>
+<td><strong>W4</strong></td><td>7/22–7/28</td><td>15</td><td>$82.93</td><td>$5.53</td>
+<td><strong>$452.38</strong></td><td>8</td><td><span class="ret-mature">✓ 全熟</span></td>
+<td>$504.88（当前快照·仍在累积）</td><td><span class="ret-immature">— 未成熟</span></td>
+<td>$504.88（当前快照·仍在累积）</td><td><span class="ret-immature">— 未成熟</span></td>
+</tr>
+<tr>
+<td><strong>W5</strong></td><td>7/29–7/31</td><td>4</td><td>$36.00</td><td>$9.00</td>
+<td><strong>$82.00</strong></td><td>3</td><td><span class="ret-mature">✓ 全熟</span></td>
+<td>$82.00（当前快照·仍在累积）</td><td><span class="ret-immature">— 未成熟</span></td>
+<td>$82.00（当前快照·仍在累积）</td><td><span class="ret-immature">— 未成熟</span></td>
+</tr>
+<tr style="background:#F0F7FF;font-weight:700">
+<td>7月合计</td><td>—</td><td>53</td><td>$257.64</td><td>$4.86</td>
+<td>$1028.61</td><td>27</td><td>— W1–W5全熟</td>
+<td>$1375.95</td><td>— W1/W2/W3全熟·W4/W5未熟</td>
+<td>$1774.70</td><td>— W1全熟·W2–W5未熟</td>
+</tr>
+
+</table>
+<div class="panel info"><div class="panel-icon">📊</div><div class="panel-body">
+  <strong>D系列月度观察：W2留存质量与规模兼优，D30目前仅W1完整可评估。</strong>
+  W2（7/8–7/14）D7A $315.49全月第二高且已全熟，D7CR 56.3%为全月最优批次。W4（7/22–7/28）D7A $452.38为单周最高值，D7CR 53.3%，但该批次尚在积累D15/D30，暂不能做长期价值判断。W1的D30已完整成熟：D30A $659.67、D30CR 40.0%，是目前唯一可供30天完整评估的批次，可作为其他周次后续对照的基准。W3因FDC基数过小（仅4人），各项留存指标样本量不足，结论参考价值有限。
+</div></div>
+
+
+<!-- §8 结论 -->
+<h2>八 · 核心结论与建议</h2>
+
+<div class="panel info"><div class="panel-icon">📋</div><div class="panel-body">
+  <strong>7月整体评估：花费大幅缩量（-37.6% MoM），FDC规模基本持平，单位效率略有提升但客单价问题依旧突出。</strong>
+  GGR $1,054.37（-21.7% MoM）降幅小于花费降幅，说明投放效率边际改善，但Avg FD $4.86持续远低于$20目标，是连续多月未解决的结构性问题。SDA $1,386.89、Returning Deposit $96.00显示复投玩家仍是收入重要来源。
+</div></div>
+
+<div class="panel warning"><div class="panel-icon">⚠️</div><div class="panel-body">
+  <strong>L2周度KPI（D7 Ads Rate≤0.70、单客户D7A≥$100）全月5周均未达标，其中W3（D7 Ads Rate 9.626）是全月表现最差的一周。</strong>
+  W4的D7 Ads Rate 0.983是全月最接近达标的一周，建议复盘W4的投放策略（花费$444.71、素材组合）是否有可复制的经验。
+</div></div>
+
+<div class="panel error"><div class="panel-icon">🚨</div><div class="panel-body">
+  <strong>17WINKH 暂无 brand_KPI 文件与正式月度GGR目标，PART6.3速查表也未提供该品牌月度GGR基准，建议尽快向业务方确认，以便后续报告可做真实达成率评估。</strong>
+</div></div>
+
+<div class="panel success"><div class="panel-icon">✅</div><div class="panel-body">
+  <strong>IM_SLT1_KH02（GGR $249.71，Avg FD $8.86）与SLT2_KH01（GGR $169.54/花费仅$131.72）是本月效率标杆，建议下月优先扩量测试。</strong>
+  VD_2473_KH01虽走量最大（FDC 11人）但Avg FD偏低，建议与IM_SLT1_KH02组合投放，兼顾规模与质量。SLT2_KH02（GGR -$14.15）建议结合D15/D30数据判断是否为个别大额出金事件后再决定去留。
+</div></div>
+
+
+<hr>
+<p style="font-size:11px;color:#6B778C;text-align:center">
+  【USC 分析】USC - 17WINKH 月报 · 2026年7月 · 生成：2026年8月5日（周三）<br>
+  汇报周期：2026年7月1日 —— 7月31日 · 货币：USD
+</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('weeklyChart'),{
+  data:{
+    labels: ["W1", "W2", "W3", "W4", "W5"],
+    datasets:[
+      {type:'bar',label:'Ads Spend($)',data:[538.36, 450.44, 116.86, 444.71, 220.49],backgroundColor:'#0052CC',yAxisID:'y',borderRadius:4,barPercentage:0.5},
+      {type:'bar',label:'SDA($)',data:[109.69, 520.35, 14.14, 659.71, 88.0],backgroundColor:'#6554C0',yAxisID:'y',borderRadius:4,barPercentage:0.5},
+      {type:'line',label:'FDC(人)',data:[15, 15, 4, 15, 4],borderColor:'#00875A',backgroundColor:'transparent',tension:0.3,pointRadius:5,pointBackgroundColor:'#00875A',yAxisID:'y2'},
+      {type:'line',label:'FDA($)',data:[58.11, 66.52, 14.08, 82.93, 36.0],borderColor:'#FF8B00',backgroundColor:'transparent',tension:0.3,pointRadius:5,pointBackgroundColor:'#FF8B00',yAxisID:'y'},
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'top',labels:{font:{size:11},color:'#5E6C84'}}},
+    scales:{
+      y:{type:'linear',position:'left',ticks:{color:'#5E6C84',font:{size:10}}},
+      y2:{type:'linear',position:'right',grid:{drawOnChartArea:false},ticks:{color:'#00875A',font:{size:10}}}
+    }
+  }
+});
+</script>
+
+</body>
+</html>
