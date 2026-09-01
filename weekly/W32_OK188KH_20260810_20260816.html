@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>USC - OK188KH 周报 · 2026第32周</title>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.6;color:#172B4D;max-width:1020px;margin:0 auto;padding:28px 36px;background:#fff}
+  .page-title{font-size:24px;font-weight:700;color:#172B4D;padding-bottom:10px;border-bottom:3px solid #0052CC;margin-bottom:6px}
+  .page-meta{font-size:12px;color:#6B778C;margin-bottom:24px}
+  h2{font-size:16px;font-weight:700;color:#172B4D;margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid #DFE1E6}
+  h3{font-size:13px;font-weight:700;color:#5E6C84;margin:14px 0 7px;text-transform:uppercase;letter-spacing:.04em}
+  .panel{border-radius:4px;padding:10px 14px;margin:8px 0;display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.55}
+  .pi{font-size:14px;flex-shrink:0;margin-top:1px}.pb{flex:1}
+  .panel.info{background:#DEEBFF;border-left:4px solid #0052CC}
+  .panel.warn{background:#FFFAE6;border-left:4px solid #FF8B00}
+  .panel.err{background:#FFEBE6;border-left:4px solid #DE350B}
+  .panel.ok{background:#E3FCEF;border-left:4px solid #00875A}
+  .panel strong{font-weight:600}
+  .mrow{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
+  .mc{flex:1;min-width:120px;background:#F4F5F7;border-radius:6px;padding:11px 13px}
+  .mc .lb{font-size:10px;color:#6B778C;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+  .mc .val{font-size:19px;font-weight:700;color:#172B4D;line-height:1.2}
+  .mc .sub{font-size:10px;color:#6B778C;margin-top:3px}
+  .wow{display:block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;margin-top:5px}
+  .wu{background:#E3FCEF;color:#006644}.wd{background:#FFEBE6;color:#BF2600}.wn{background:#F4F5F7;color:#5E6C84}
+  .val.g{color:#00875A}.val.r{color:#DE350B}.val.o{color:#FF8B00}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0}
+  th{background:#F4F5F7;color:#5E6C84;font-weight:700;font-size:11px;text-align:left;padding:6px 9px;border:1px solid #DFE1E6;white-space:nowrap}
+  td{padding:6px 9px;border:1px solid #DFE1E6;vertical-align:middle}
+  tr:nth-child(even) td{background:#FAFBFC}
+  .tr td{background:#F4F5F7!important;font-weight:700}
+  .lz{display:inline-block;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600;line-height:1.6}
+  .lg{background:#E3FCEF;color:#006644}.lr{background:#FFEBE6;color:#BF2600}
+  .ly{background:#FFFAE6;color:#974F0C}.ln{background:#F4F5F7;color:#5E6C84}
+  .lb2{background:#DEEBFF;color:#0747A6}.lp{background:#EAE6FF;color:#403294}
+  .code{font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;color:#5E6C84}
+  .sn{font-size:12px;color:#6B778C;margin-bottom:8px}
+  hr{border:none;border-top:1px solid #DFE1E6;margin:20px 0}
+  .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:10px 0}
+  .chart-box{background:#FAFBFC;border:1px solid #DFE1E6;border-radius:6px;padding:12px 14px}
+  .chart-box h4{font-size:12px;font-weight:700;color:#5E6C84;margin:0 0 8px;text-transform:uppercase;letter-spacing:.03em}
+  .chart-legend-row{display:flex;gap:14px;font-size:11px;color:#5E6C84;margin-bottom:6px;flex-wrap:wrap}
+  .chart-legend-row span{display:flex;align-items:center;gap:5px}
+  .lb-box{width:10px;height:10px;border-radius:2px;display:inline-block}
+  .chart-wrap-sm{position:relative;height:180px}
+  .section-summary{background:#F8F9FA;border:1px solid #DFE1E6;border-radius:6px;padding:12px 15px;margin:10px 0;font-size:13px}
+  .section-summary h4{font-size:13px;font-weight:700;color:#172B4D;margin:0 0 8px}
+  .ss-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+  .ss-item{background:#fff;border:1px solid #DFE1E6;border-radius:5px;padding:8px 10px}
+  .ss-item .s-label{font-size:10px;color:#6B778C;font-weight:600;text-transform:uppercase;margin-bottom:3px}
+  .ss-item .s-value{font-size:15px;font-weight:700;color:#172B4D}
+  .ggr-progress-box{background:#F4F5F7;border-radius:8px;padding:16px 20px;margin:10px 0}
+  .ggr-progress-box h3{margin:0 0 4px;font-size:14px;color:#172B4D}
+  .ggr-progress-box .sub-note{font-size:12px;color:#6B778C;margin-bottom:10px}
+  .ggr-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .ggr-card{background:#fff;border:1px solid #DFE1E6;border-radius:6px;padding:10px 13px}
+  .ggr-card .gc-label{font-size:11px;color:#6B778C;font-weight:600;margin-bottom:4px}
+  .ggr-card .gc-val{font-size:18px;font-weight:700;color:#172B4D}
+  .ads-card{border:1px solid #DFE1E6;border-radius:8px;overflow:hidden;margin-bottom:14px}
+  .ads-card.best{border-top:3px solid #00875A}.ads-card.mid{border-top:3px solid #0052CC}
+  .ads-card.warn{border-top:3px solid #FF8B00}.ads-card.newads{border-top:3px solid #6554C0}
+  .ads-card.low{border-top:3px solid #B3BAC5}
+  .ads-head{padding:9px 13px;background:#F4F5F7;border-bottom:1px solid #DFE1E6;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .ads-head .an{font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;color:#172B4D;font-weight:700;flex:1}
+  .ads-body{padding:10px 14px 0}
+  .ads-meta{display:grid;grid-template-columns:90px 1fr;gap:12px}
+  .ads-img img{width:88px;height:88px;object-fit:cover;border-radius:5px;border:1px solid #DFE1E6;display:block}
+  .ads-img .il{font-size:9px;color:#6B778C;text-align:center;margin-top:3px;line-height:1.3}
+  .ads-kpis{display:flex;flex-direction:column;gap:0}
+  .kpi-section{margin-bottom:8px}
+  .kpi-section .ks-label{font-size:10px;font-weight:700;color:#6B778C;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;padding-bottom:2px;border-bottom:1px solid #EBECF0}
+  .kpi-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+  .kpi-item{background:#FAFBFC;border:1px solid #EBECF0;border-radius:4px;padding:5px 8px;min-width:80px}
+  .kpi-item .kl{font-size:9px;color:#6B778C;font-weight:500;margin-bottom:2px}
+  .kpi-item .kv{font-size:14px;font-weight:700;color:#172B4D;line-height:1.2}
+  .kv.g{color:#00875A}.kv.r{color:#DE350B}.kv.o{color:#FF8B00}
+  .ads-hist{padding:8px 14px;border-top:1px solid #DFE1E6;margin-top:8px}
+  .ads-hist h5{font-size:10px;font-weight:700;color:#5E6C84;text-transform:uppercase;letter-spacing:.04em;margin:0 0 5px}
+  .hist-wrap{position:relative;height:100px}
+  .ads-note{padding:7px 14px;font-size:11px;color:#5E6C84;border-top:1px solid #DFE1E6;background:#FAFBFC}
+  .rank-table .rank-row{border:1px solid #DFE1E6;border-radius:6px;margin-bottom:10px;overflow:hidden}
+  .rank-header{display:grid;grid-template-columns:44px 32px 90px 1fr 60px 55px 55px 55px 65px 65px 65px 65px;gap:0;background:#F4F5F7;border-bottom:1px solid #DFE1E6;font-size:10px;font-weight:700;color:#5E6C84;text-transform:uppercase;letter-spacing:.03em}
+  .rank-header div,.rank-data div{padding:6px 8px;border-right:1px solid #DFE1E6;display:flex;align-items:center}
+  .rank-header div:last-child,.rank-data div:last-child{border-right:none}
+  .rank-data{display:grid;grid-template-columns:44px 32px 90px 1fr 60px 55px 55px 55px 65px 65px 65px 65px;gap:0;font-size:12px}
+  .rank-img{width:32px;height:32px;object-fit:cover;border-radius:4px;border:1px solid #DFE1E6;display:block}
+  .rank-no-img{width:32px;height:32px;border-radius:4px;border:1px solid #DFE1E6;background:#F4F5F7;display:flex;align-items:center;justify-content:center;font-size:7px;color:#6B778C;text-align:center}
+  .rank-desc{padding:8px 14px;font-size:12px;color:#5E6C84;background:#FAFBFC;border-top:1px solid #DFE1E6;line-height:1.6}
+  .grade-badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700}
+  .gb-best{background:#E3FCEF;color:#006644}.gb-mid{background:#DEEBFF;color:#0747A6}
+  .gb-warn{background:#FFFAE6;color:#974F0C}.gb-low{background:#FFEBE6;color:#BF2600}
+  .gb-new{background:#EAE6FF;color:#403294}.gb-zero{background:#F4F5F7;color:#5E6C84}
+  .s7-note{font-size:10px;color:#6B778C;font-style:italic;margin-top:2px}
+</style>
+</head>
+<body>
+
+<div class="page-title">USC - OK188KH 周报 · 2026第32周</div>
+<div class="page-meta">
+  <strong>汇报周期：</strong>2026年8月10日（周一）至 2026年8月16日（周日）&nbsp;｜&nbsp;
+  <strong>品牌：</strong>OK188KH&nbsp;｜&nbsp;<strong>货币：</strong>USD&nbsp;｜&nbsp;
+  <strong>生成日期：</strong>2026年8月26日（周三）
+</div>
+
+<div class="panel info">
+  <div class="pi">📊</div>
+  <div class="pb"><strong>说明：</strong>本报告生成日较常规Monday节奏晚10天，本周（W32）D7数据已全部成熟（diff=10–16d，均≥7d），因此本报告罕见地对本周D7给出完整评估而非"预告"；D15仅8/10、8/11两天成熟，其余5天未成熟。上周（W31）D7/D15均已全数成熟，作为正式L2评估对象。</div>
+</div>
+
+<!-- ══ 一 · 周度核心数据概览 ══ -->
+<h2>一 · 周度核心数据概览</h2>
+<p class="sn">W31（8/3–8/9）为对比基准 · 本周花费与流量均有所收缩，转化侧同步下滑，但降幅小于W31的大额存款事件带来的表面繁荣</p>
+
+<div class="mrow">
+  <div class="mc"><div class="lb">Ads Spend</div><div class="val o">$794.24</div><div class="sub">W31：$929.28</div><span class="wow wd">▼ -14.5% vs W31</span></div>
+  <div class="mc"><div class="lb">IMP</div><div class="val r">89,543</div><div class="sub">W31：205,261</div><span class="wow wd">▼ -56.4% vs W31</span></div>
+  <div class="mc"><div class="lb">Link Click</div><div class="val r">538</div><div class="sub">W31：1,337 · CTR 0.601%</div><span class="wow wd">▼ -59.8% vs W31</span></div>
+  <div class="mc"><div class="lb">Lead</div><div class="val r">90</div><div class="sub">W31：136</div><span class="wow wd">▼ -33.8% vs W31</span></div>
+  <div class="mc"><div class="lb">Chat</div><div class="val r">94</div><div class="sub">W31：128</div><span class="wow wd">▼ -26.6% vs W31</span></div>
+  <div class="mc"><div class="lb">REG</div><div class="val o">45</div><div class="sub">W31：50</div><span class="wow wd">▼ -10.0% vs W31</span></div>
+</div>
+<div class="mrow">
+  <div class="mc"><div class="lb">总 FDC</div><div class="val o">22</div><div class="sub">W31：24（目标 ≥10/天）</div><span class="wow wd">▼ -8.3% vs W31</span></div>
+  <div class="mc"><div class="lb">总 FDA</div><div class="val o">$104.82</div><div class="sub">W31：$145.75</div><span class="wow wd">▼ -28.1% vs W31</span></div>
+  <div class="mc"><div class="lb">FDCR</div><div class="val g">48.89%</div><div class="sub">W31：48.0%</div><span class="wow wu">▲ +0.89pp，基本持平</span></div>
+  <div class="mc"><div class="lb">AFDA</div><div class="val o">$4.76</div><div class="sub">W31：$6.07（目标 ≥$10）</div><span class="wow wd">▼ -21.6%，仍未达标</span></div>
+  <div class="mc"><div class="lb">CPA</div><div class="val g">$36.10</div><div class="sub">W31：$38.72</div><span class="wow wu">▲ 略有改善 -6.8%</span></div>
+  <div class="mc"><div class="lb">CTR</div><div class="val r">0.601%</div><div class="sub">W31：0.651%</div><span class="wow wd">▼ 流量质量下降</span></div>
+</div>
+<div class="mrow">
+  <div class="mc"><div class="lb">SDA（周合计）</div><div class="val r">$135.00</div><div class="sub">W31：$686.88（含8/4大额事件）</div><span class="wow wd">▼ -80.3% vs W31</span></div>
+  <div class="mc"><div class="lb">GGR</div><div class="val r">$108.82</div><div class="sub">W31：$585.63（含大额事件）</div><span class="wow wd">▼ -81.4% vs W31</span></div>
+  <div class="mc"><div class="lb">返回玩家（RM）</div><div class="val g">4人</div><div class="sub">W31：3人</div><span class="wow wu">▲ 略有提升</span></div>
+  <div class="mc"><div class="lb">返回存款（RD）</div><div class="val r">$309.00</div><div class="sub">W31：$1,545.00（含大额事件）</div><span class="wow wd">▼ -80.0%（回归常态）</span></div>
+</div>
+
+<div class="panel warn">
+  <div class="pi">⚠️</div>
+  <div class="pb"><strong>本周花费与流量同步收缩（-14.5%/-56.4%），转化各环节也相应下滑（Lead -33.8%、Chat -26.6%、REG -10.0%、FDC -8.3%），但FDCR基本持平（48.89% vs 48.0%），CPA还略有改善（$36.10 vs $38.72）。</strong>
+  W31的GGR/SDA/RD绝对值（$585.63/$686.88/$1,545.00）远超本周，主要由8/4单日一笔巨额存款事件驱动（SDA $246.88/GGR $177.88，以及RD $1,533.00）。本周数值大幅"下降"更应理解为该异常事件消退后回归常态，而非业务本身急剧恶化——但流量质量下滑（CTR从0.651%降至0.601%）是本周真实存在的问题，需持续关注。</div>
+</div>
+
+<!-- ══ 二 · 全周漏斗汇总 ══ -->
+<h2>二 · 全周漏斗汇总</h2>
+<div style="display:flex;align-items:center;gap:4px;margin:12px 0;flex-wrap:wrap">
+  <div style="flex:1;min-width:70px;text-align:center;background:#DEEBFF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#0747A6;font-weight:700">Ads Spend</div>
+    <div style="font-size:20px;font-weight:800;color:#0052CC">$794</div>
+    <div style="font-size:10px;color:#6B778C">-14.5% vs W31</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#DEEBFF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#0747A6;font-weight:700">Link Click</div>
+    <div style="font-size:20px;font-weight:800;color:#0052CC">538</div>
+    <div style="font-size:10px;color:#6B778C">CTR 0.601%</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#FFFAE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#974F0C;font-weight:700">Lead</div>
+    <div style="font-size:20px;font-weight:800;color:#FF8B00">90</div>
+    <div style="font-size:10px;color:#6B778C">-33.8% vs W31</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#FFFAE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#974F0C;font-weight:700">Chat</div>
+    <div style="font-size:20px;font-weight:800;color:#FF8B00">94</div>
+    <div style="font-size:10px;color:#6B778C">Lead→Chat 104.4%</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#FFFAE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#974F0C;font-weight:700">REG</div>
+    <div style="font-size:20px;font-weight:800;color:#FF8B00">45</div>
+    <div style="font-size:10px;color:#6B778C">Chat→REG 47.9%</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#E3FCEF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#006644;font-weight:700">FDC</div>
+    <div style="font-size:20px;font-weight:800;color:#00875A">22</div>
+    <div style="font-size:10px;color:#6B778C">FDCR 48.89%</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#FFFAE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#974F0C;font-weight:700">FDA</div>
+    <div style="font-size:20px;font-weight:800;color:#FF8B00">$105</div>
+    <div style="font-size:10px;color:#6B778C">AFDA $4.76 ✗</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:70px;text-align:center;background:#FFEBE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#BF2600;font-weight:700">GGR</div>
+    <div style="font-size:20px;font-weight:800;color:#DE350B">$109</div>
+    <div style="font-size:10px;color:#6B778C">SDA $135</div>
+  </div>
+</div>
+
+<div class="panel info">
+  <div class="pi">📊</div>
+  <div class="pb"><strong>本周漏斗各环节转化率表现良好：Lead→Chat 104.4%（超100%说明部分Lead在跨日后才转Chat），Chat→REG 47.9%（W31为39.1%），REG→FDC 48.89%，均较W31有明显改善，说明流量规模虽收缩，但漏斗效率不降反升，整体转化质量有正向趋势。</strong></div>
+</div>
+
+<!-- ══ 三 · 每日花费与转化趋势 ══ -->
+<h2>三 · 每日花费与转化趋势</h2>
+<p class="sn">支出侧（Spend/FDA/GGR）与转化侧（Lead/Chat/REG/FDC）双图表</p>
+
+<div class="chart-row">
+  <div class="chart-box">
+    <h4>花费 · FDA · GGR（USD）</h4>
+    <div class="chart-legend-row">
+      <span><span class="lb-box" style="background:#0052CC"></span>Ads Spend（柱，USD）</span>
+      <span><span class="lb-box" style="background:#FF8B00"></span>FDA（柱，USD）</span>
+      <span><span class="lb-box" style="border-radius:50%;background:#00875A;width:8px;height:8px"></span>GGR（折线，USD）</span>
+    </div>
+    <div class="chart-wrap-sm"><canvas id="spendChart"></canvas></div>
+  </div>
+  <div class="chart-box">
+    <h4>Lead · Chat · REG · FDC（人数）</h4>
+    <div class="chart-legend-row">
+      <span><span class="lb-box" style="background:#BDD7FC;opacity:.8"></span>Lead</span>
+      <span><span class="lb-box" style="background:#0052CC"></span>Chat</span>
+      <span><span class="lb-box" style="background:#FF8B00"></span>REG</span>
+      <span><span class="lb-box" style="background:#00875A"></span>FDC</span>
+    </div>
+    <div class="chart-wrap-sm"><canvas id="convChart"></canvas></div>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>日期</th><th>花费($)</th><th>IMP</th><th>Link Click</th><th>Lead</th><th>Chat</th><th>REG</th>
+      <th>FDC</th><th>FDCR</th><th>FDA($)</th><th>SDA($)</th><th>GGR($)</th><th>RM</th><th>RD($)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>8/10 周一</td><td>$123.16</td><td style="color:#0052CC"><strong>31,056</strong></td><td>144</td><td>18</td><td>20</td><td>8</td><td>3</td><td>37.5%</td><td>$16.00</td><td>$41.00</td><td style="color:#DE350B">−$19.00</td><td>—</td><td>—</td></tr>
+    <tr><td>8/11 周二</td><td>$86.06</td><td>15,801</td><td>99</td><td>17</td><td>14</td><td>9</td><td>6</td><td>66.7%</td><td>$28.88</td><td>$28.00</td><td style="color:#00875A">$36.88</td><td>2</td><td style="color:#0052CC">$287.00</td></tr>
+    <tr><td>8/12 周三</td><td>$110.46</td><td>6,478</td><td>47</td><td>10</td><td>13</td><td>5</td><td>4</td><td>80.0%</td><td>$17.94</td><td>$25.00</td><td style="color:#00875A">$42.94</td><td>1</td><td>$14.00</td></tr>
+    <tr><td>8/13 周四</td><td style="color:#0052CC"><strong>$138.47</strong></td><td>7,054</td><td>66</td><td>15</td><td>14</td><td>8</td><td>2</td><td>25.0%</td><td>$13.00</td><td>$6.00</td><td style="color:#00875A">$9.00</td><td>—</td><td>—</td></tr>
+    <tr><td>8/14 周五</td><td>$137.58</td><td>7,075</td><td>50</td><td>11</td><td>11</td><td>5</td><td>3</td><td>60.0%</td><td>$11.00</td><td>$5.00</td><td style="color:#00875A">$16.00</td><td>—</td><td>—</td></tr>
+    <tr><td>8/15 周六</td><td>$96.58</td><td>7,420</td><td>52</td><td>9</td><td>8</td><td>4</td><td>2</td><td>50.0%</td><td>$8.00</td><td>—</td><td style="color:#00875A">$8.00</td><td>—</td><td>—</td></tr>
+    <tr><td>8/16 周日</td><td>$101.93</td><td>14,659</td><td>80</td><td>10</td><td>14</td><td>6</td><td>2</td><td>33.3%</td><td>$10.00</td><td>$30.00</td><td style="color:#00875A">$15.00</td><td>1</td><td>$8.00</td></tr>
+    <tr class="tr">
+      <td><strong>合计</strong></td><td><strong>$794.24</strong></td><td><strong>89,543</strong></td><td><strong>538</strong></td>
+      <td><strong>90</strong></td><td><strong>94</strong></td><td><strong>45</strong></td>
+      <td><strong>22</strong></td><td><strong>48.89%</strong></td><td><strong>$104.82</strong></td>
+      <td><strong>$135.00</strong></td>
+      <td style="color:#00875A"><strong>$108.82</strong></td>
+      <td><strong>4</strong></td><td><strong>$309.00</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="section-summary">
+  <h4>📊 Section 3 · 本周趋势总结</h4>
+  <div class="ss-grid">
+    <div class="ss-item"><div class="s-label">流量最高日</div><div class="s-value" style="color:#0052CC">8/10（31,056 IMP）</div></div>
+    <div class="ss-item"><div class="s-label">花费最高日</div><div class="s-value" style="color:#0052CC">8/13（$138.47）</div></div>
+    <div class="ss-item"><div class="s-label">FDCR 最高日</div><div class="s-value" style="color:#00875A">8/12（80.0%）</div></div>
+    <div class="ss-item"><div class="s-label">GGR 唯一负值日</div><div class="s-value" style="color:#DE350B">8/10（−$19.00）</div></div>
+    <div class="ss-item"><div class="s-label">RD 峰值日</div><div class="s-value" style="color:#0052CC">8/11（$287.00）</div></div>
+    <div class="ss-item"><div class="s-label">零FDC天数</div><div class="s-value" style="color:#00875A">0天（全周均有转化）</div></div>
+  </div>
+  <p style="font-size:12px;color:#5E6C84;margin:8px 0 0">本周是近期难得的"全周无零转化日"，每天均产出至少2笔FDC，转化持续性表现良好。8/12 FDCR达全周最高（80.0%），是本周转化质量的高光时刻。8/10流量最高但当日GGR为唯一负值（−$19.00），说明流量峰值与盈利质量不完全正相关。8/13花费最高但FDCR仅25.0%，是本周唯一的高花费低转化日，值得关注。</p>
+</div>
+
+<!-- ══ 四 · KPI 周度总结 ══ -->
+<h2>四 · KPI 周度总结</h2>
+<p class="sn">OK188KH L3 目标：FDC ≥10人/天(合格)/13人/天(理想) · Average FD ≥$10 · Daily FDA ≥$100(合格)/$130(理想) · SDA Amount ≥$408/周</p>
+
+<h3>L3 · 每日过程指标（W32）</h3>
+<table>
+  <thead>
+    <tr><th>日期</th><th>FDC（目标≥10）</th><th>AFDA（目标≥$10）</th><th>FDA（目标≥$100）</th><th>SDA</th><th>GGR</th><th>备注</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>8/10 周一</td><td><span class="lz lr">3 ✗</span></td><td><span class="lz lr">$5.33 ✗</span></td><td><span class="lz lr">$16.00 ✗</span></td><td>$41.00</td><td style="color:#DE350B">−$19.00</td><td>全周唯一GGR负值日</td></tr>
+    <tr><td>8/11 周二</td><td><span class="lz lr">6 ✗</span></td><td><span class="lz lr">$4.81 ✗</span></td><td><span class="lz lr">$28.88 ✗</span></td><td>$28.00</td><td style="color:#00875A">$36.88</td><td>RD峰值日</td></tr>
+    <tr><td>8/12 周三</td><td><span class="lz lr">4 ✗</span></td><td><span class="lz lr">$4.49 ✗</span></td><td><span class="lz lr">$17.94 ✗</span></td><td>$25.00</td><td style="color:#00875A"><strong>$42.94</strong></td><td>GGR/FDCR全周最高</td></tr>
+    <tr><td>8/13 周四</td><td><span class="lz lr">2 ✗</span></td><td><span class="lz lr">$6.50 ✗</span></td><td><span class="lz lr">$13.00 ✗</span></td><td>$6.00</td><td style="color:#00875A">$9.00</td><td>花费最高但转化偏低</td></tr>
+    <tr><td>8/14 周五</td><td><span class="lz lr">3 ✗</span></td><td><span class="lz lr">$3.67 ✗</span></td><td><span class="lz lr">$11.00 ✗</span></td><td>$5.00</td><td style="color:#00875A">$16.00</td><td></td></tr>
+    <tr><td>8/15 周六</td><td><span class="lz lr">2 ✗</span></td><td><span class="lz lr">$4.00 ✗</span></td><td><span class="lz lr">$8.00 ✗</span></td><td>—</td><td style="color:#00875A">$8.00</td><td></td></tr>
+    <tr><td>8/16 周日</td><td><span class="lz lr">2 ✗</span></td><td><span class="lz lr">$5.00 ✗</span></td><td><span class="lz lr">$10.00 ✗</span></td><td>$30.00</td><td style="color:#00875A">$15.00</td><td></td></tr>
+    <tr class="tr"><td><strong>日均</strong></td><td><strong>3.1人</strong><br><span style="font-size:10px;color:#BF2600">目标10人（0/7天达标）</span></td><td><strong>$4.76</strong><br><span style="font-size:10px;color:#BF2600">目标$10</span></td><td><strong>$14.97</strong><br><span style="font-size:10px;color:#BF2600">目标$100</span></td><td><strong>$135.00（周合计）</strong><br><span style="font-size:10px;color:#BF2600">目标$408 · 未达标</span></td><td style="color:#00875A"><strong>$108.82</strong></td><td></td></tr>
+  </tbody>
+</table>
+
+<div class="panel err">
+  <div class="pi">🚨</div>
+  <div class="pb"><strong>L3日度关键指标全周未达标：FDC日均仅3.1人（目标10人），AFDA/FDA/SDA周合计均未达标，但全周无零转化日是积极信号，说明转化持续性良好，主要缺口在于单笔金额偏低。</strong></div>
+</div>
+
+<h3>L2 · 周度质量评估</h3>
+<p class="sn">报告日 8/26 · <strong>正式评估对象：上周（W31，8/3–8/9）</strong>，D7/D15均全数成熟（diff=17–23d）✓ · <strong>本周（W32）D7 也已全数成熟（diff=10–16d）</strong>，罕见地可一并给出完整评估，D15仅8/10、8/11成熟</p>
+
+<div class="mrow">
+  <div class="mc"><div class="lb">W31 D7 Ads Rate</div><div class="val r">3.193</div><div class="sub">$929.28÷$291.00（目标≤0.25 ✗）</div></div>
+  <div class="mc"><div class="lb">W31 D7A</div><div class="val o">$291.00</div><div class="sub">D7R=9 人的 D7A 合计</div></div>
+  <div class="mc"><div class="lb">W31 D7CR</div><div class="val o">37.5%</div><div class="sub">D7R 9÷FDC 24</div></div>
+  <div class="mc"><div class="lb">W31 D7周合计</div><div class="val r">$291.00</div><div class="sub">目标≥$2,240 ✗</div></div>
+  <div class="mc"><div class="lb">W31 D15R/D15A</div><div class="val o">9人 / $408.88</div><div class="sub">全数成熟，8/4单笔D15A $127.88占比31.3%</div></div>
+</div>
+
+<div class="panel err">
+  <div class="pi">🚨</div>
+  <div class="pb"><strong>W31 L2 正式评估：D7 Ads Rate 3.193（目标≤0.25 ✗，超标约11.8倍），D7周合计D7A仅$291.00，远低于$2,240目标（达成率仅13.0%）。</strong>
+  D7CR 37.5%中等偏弱。值得注意：本次重新拉取W31数据时，多项指标（SDA/GGR/RD等）较此前W31报告的数值有所变动（属正常的滚动更新，源于后续持续入账的交易记录），本报告已以最新数据为准。D15R/D15A（9人/$408.88）中，8/5单笔D15A较高（$246.00，占比60.2%），续存质量仍集中于个别玩家。</div>
+</div>
+
+<div class="panel ok">
+  <div class="pi">✅</div>
+  <div class="pb"><strong>W32（本周）D7 完整评估（罕见情况，因生成日晚10天而全数成熟）：D7 Ads Rate 8.361（目标≤0.25 ✗），D7CR 45.5%（10/22），D7周合计D7A $95.00，同样远低于$2,240目标。</strong>
+  相比W31的D7 Ads Rate 3.193，本周8.361表现更差，但D7CR略有提升（45.5% vs 37.5%），说明续存人数占比在改善，但金额端仍严重不足。8/16单笔D7A达$20.00是本周唯一相对可观的续存贡献，其余日期续存金额普遍偏低。</div>
+</div>
+
+<h3>8月 GGR 进度（信息参考）</h3>
+<div class="ggr-progress-box">
+  <h3>8月 UTD GGR（8/1–8/16）</h3>
+  <div class="sub-note">此处呈现UTD参考值，不做月度达成率计算（月度目标应在完整月报中评估）</div>
+  <div class="ggr-cards">
+    <div class="ggr-card"><div class="gc-label">8/1–8/9 GGR</div><div class="gc-val" style="color:#00875A">$588.20</div></div>
+    <div class="ggr-card"><div class="gc-label">W32 GGR（8/10–8/16）</div><div class="gc-val" style="color:#00875A">$108.82</div></div>
+    <div class="ggr-card"><div class="gc-label">8月 UTD GGR 合计</div><div class="gc-val" style="color:#00875A">$697.02</div></div>
+    <div class="ggr-card"><div class="gc-label">8月 UTD FDC</div><div class="gc-val" style="color:#00875A">88人</div></div>
+  </div>
+</div>
+
+<div class="panel warn">
+  <div class="pi">⚠️</div>
+  <div class="pb"><strong>8月至今GGR为$697.02，W32单周贡献占比15.6%，明显低于8/1–8/9期间的水平（含8/4大额事件），是8月以来相对疲软的一周。</strong></div>
+</div>
+
+<!-- ══ 五 · 周度广告素材表现 ══ -->
+<h2>五 · 周度广告素材表现</h2>
+<p class="sn">排列顺序：① 有花费有FDC（非新素材，按GGR降序）→ ② 有花费无FDC → ③ 新素材（Active Days≤3，本周有多支）→ ④ 零花费转化</p>
+
+<!-- WD4_KH01 -->
+<div class="ads-card best">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_WD4_KH01</div>
+    <span class="lz lp">VD 视频</span><span class="lz lg">GGR最高·CPA最低</span>
+    <span class="lz lb2">Active 4天（生命周期47天）</span><span class="lz lg">FDC 4</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQLYDtr5Tk2R5cFKmE_kratZYa3FW346TROfBymvY8n0Gue5Msr8urf_WAAq5dADnb_2pdrNUj83EsfB86JiE6Xu0ZQbxwuY_YZMqWRR18AFbKmpgwkbdhxDB4dY0Lna9JQmIh87gbLVAsHzAce4lD7K" onerror="this.style.background='#F4F5F7'" alt="WD4_KH01">
+        <div class="il">ai girl withdrawal + fortune gem</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$64.83</div></div>
+            <div class="kpi-item"><div class="kl">IMP</div><div class="kv">2,586</div></div>
+            <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">29</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv g">1.12%</div></div>
+            <div class="kpi-item"><div class="kl">CPM</div><div class="kv r">$25.07</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv g">16</div></div>
+            <div class="kpi-item"><div class="kl">Chat</div><div class="kv">12</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv g">10（全周最高）</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">4</div></div>
+            <div class="kpi-item"><div class="kl">FDCR</div><div class="kv o">40.0%</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">ROI 层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">FDA</div><div class="kv g">$17.94</div></div>
+            <div class="kpi-item"><div class="kl">AFDA</div><div class="kv o">$4.49</div></div>
+            <div class="kpi-item"><div class="kl">SDA</div><div class="kv g">$5.00</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$22.94（全周最高）</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv g">$16.21（全周最低）</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_WD4_KH01"></canvas></div>
+  </div>
+  <div class="ads-note">生命周期47天的核心长青素材，本周表现全面领先：REG最高、GGR最高、CPA最低，是本周绝对的效率标杆，建议维持并考虑加码投放。</div>
+</div>
+
+<!-- WD1_KH02_IM -->
+<div class="ads-card mid">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_IM_WD1_KH02</div>
+    <span class="lz lb2">IM 图片</span><span class="lz lb2">花费最高</span>
+    <span class="lz lb2">Active 7天（生命周期48天）</span><span class="lz lg">FDC 3</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQLqpGO2lQge5AseHBnpYOAhWkb4bJkP46mJcjs56LpKlgzUge-Ui1oeiL5hJY8UsHoKfRm4YuhTASNYOJnTdX-bOrWTFRIHzzRmwbXAz1U2vLyKTP_d4RSbqSOOtZl2MvlB8AMJhKxBmZvgK6QUD3PI" onerror="this.style.background='#F4F5F7'" alt="WD1_KH02">
+        <div class="il">Website + withdraw + AI girl</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$224.05（最高）</div></div>
+            <div class="kpi-item"><div class="kl">IMP</div><div class="kv">21,220</div></div>
+            <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">185</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv g">0.87%</div></div>
+            <div class="kpi-item"><div class="kl">CPM</div><div class="kv o">$10.56</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv g">17</div></div>
+            <div class="kpi-item"><div class="kl">Chat</div><div class="kv">16</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv g">7</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">3</div></div>
+            <div class="kpi-item"><div class="kl">FDCR</div><div class="kv o">42.9%</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">ROI 层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">FDA</div><div class="kv o">$18.00</div></div>
+            <div class="kpi-item"><div class="kl">AFDA</div><div class="kv o">$6.00</div></div>
+            <div class="kpi-item"><div class="kl">SDA</div><div class="kv g">$20.00</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$18.00</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv r">$74.68</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_WD1_KH02_IM"></canvas></div>
+  </div>
+  <div class="ads-note">生命周期48天核心长青素材，全周花费最高，FDCR和转化产出中等，CPA偏高（$74.68），投放规模与效率不完全匹配。</div>
+</div>
+
+<!-- WD1_KH10 -->
+<div class="ads-card mid">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_WD1_KH10</div>
+    <span class="lz lp">VD 视频</span><span class="lz lg">FDCR良好</span>
+    <span class="lz lb2">Active 7天（生命周期29天）</span><span class="lz lg">FDC 2</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQLkNBJv7xw69EHPyfoDAbSMKPo7LrKQoL_UPQFp2i7g0Uu5ChJdk7hLvqxaeJxblr6l11ZxBRyPMN7cVKJpW4lCBuV0EhBzII0O5u1ze3CvKL0IJM-GT0kbie4w4LpSYtMLjLeqqQsIZVUST7onvQur" onerror="this.style.background='#F4F5F7'" alt="WD1_KH10">
+        <div class="il">AI girl + gold empire + withdraw</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$95.06</div></div>
+            <div class="kpi-item"><div class="kl">IMP</div><div class="kv">19,945</div></div>
+            <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">88</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv r">0.44%</div></div>
+            <div class="kpi-item"><div class="kl">CPM</div><div class="kv g">$4.77</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv g">15</div></div>
+            <div class="kpi-item"><div class="kl">Chat</div><div class="kv">11</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv g">4</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">2</div></div>
+            <div class="kpi-item"><div class="kl">FDCR</div><div class="kv g">50.0%</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">ROI 层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">FDA</div><div class="kv o">$8.00</div></div>
+            <div class="kpi-item"><div class="kl">AFDA</div><div class="kv o">$4.00</div></div>
+            <div class="kpi-item"><div class="kl">SDA</div><div class="kv o">$10.00</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$18.00</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv o">$47.53</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_WD1_KH10"></canvas></div>
+  </div>
+  <div class="ads-note">生命周期29天，FDCR 50.0%表现良好，GGR $18.00与WD1_KH02_IM并列，但CTR偏低，流量质量有提升空间。</div>
+</div>
+
+<!-- LCS1_KH01 -->
+<div class="ads-card mid">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_LCS1_KH01</div>
+    <span class="lz lp">VD 视频</span><span class="lz lb2">8/13新上线</span>
+    <span class="lz lb2">Active 4天（生命周期4天）</span><span class="lz lg">FDC 2</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQKXeZ35IzQ-QVoEJ_L3bHepD_4mCT03-f2PM-KqyR3F5WiktwpmODVmrC69E2_IWNdDjOSWYc5W7Rmu3j5iSdqxT5xVSXnBI5SMBduFA37a61oRq801Kj0yHdH47LhNYK-sxPNMw5EaGabZQnmOBdQo" onerror="this.style.background='#F4F5F7'" alt="LCS1_KH01">
+        <div class="il">License + AI girl hook</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$72.58</div></div>
+            <div class="kpi-item"><div class="kl">IMP</div><div class="kv">4,927</div></div>
+            <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">29</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv o">0.59%</div></div>
+            <div class="kpi-item"><div class="kl">CPM</div><div class="kv r">$14.73</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv g">5</div></div>
+            <div class="kpi-item"><div class="kl">Chat</div><div class="kv">5</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv g">4</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">2</div></div>
+            <div class="kpi-item"><div class="kl">FDCR</div><div class="kv g">50.0%</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">ROI 层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">FDA</div><div class="kv o">$8.00</div></div>
+            <div class="kpi-item"><div class="kl">AFDA</div><div class="kv o">$4.00</div></div>
+            <div class="kpi-item"><div class="kl">SDA</div><div class="kv o">$5.00</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$13.00</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv o">$36.29</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_LCS1_KH01"></canvas></div>
+  </div>
+  <div class="ads-note">8/13全新上线（"License"合规信任主题），4天内即产出2笔FDC，FDCR 50.0%表现优秀，是本周表现最佳的新素材，建议持续投放观察。</div>
+</div>
+
+<!-- WD1_KH11 -->
+<div class="ads-card mid">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_WD1_KH11</div>
+    <span class="lz lp">VD 视频</span>
+    <span class="lz lb2">Active 4天（生命周期26天）</span><span class="lz lg">FDC 2</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQLw3LFSZIZrUgesoikqvxYzv1AvAqEyeCx6Oxgo_KRMuU9D7xjl24R8C2kavwzPRg9rzcK_KCkRp9UfNzh3lnajspkUhniZi3K-upcPiMIj-sBh2VZfeNQOFTsKuQ4q5Imbo5wfnxMcUXLfbMNbilFX" onerror="this.style.background='#F4F5F7'" alt="WD1_KH11">
+        <div class="il">3 withdraw + 3 PG slot (no big win)</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$43.65</div></div>
+            <div class="kpi-item"><div class="kl">IMP</div><div class="kv">3,366</div></div>
+            <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">29</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv g">0.86%</div></div>
+            <div class="kpi-item"><div class="kl">CPM</div><div class="kv o">$12.97</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv g">7</div></div>
+            <div class="kpi-item"><div class="kl">Chat</div><div class="kv">6</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv g">4</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">2</div></div>
+            <div class="kpi-item"><div class="kl">FDCR</div><div class="kv g">50.0%</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">ROI 层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">FDA</div><div class="kv o">$13.00</div></div>
+            <div class="kpi-item"><div class="kl">AFDA</div><div class="kv o">$6.50</div></div>
+            <div class="kpi-item"><div class="kl">SDA</div><div class="kv o">$10.12</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$3.12</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv g">$21.82</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_WD1_KH11"></canvas></div>
+  </div>
+  <div class="ads-note">生命周期26天，FDCR 50.0%表现良好，CPA健康，但GGR偏低，AFDA金额有待提升。</div>
+</div>
+
+<!-- WD1_KH12 -->
+<div class="ads-card mid">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_WD1_KH12</div>
+    <span class="lz lp">VD 视频</span><span class="lz lb2">8/15新上线</span>
+    <span class="lz lb2">Active 2天（生命周期2天）</span><span class="lz lg">FDC 1</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQLn8ybyfjVlhh5TDPSkaaHSXbZ9gDn6jJqdsF88959TwuGxwLPdw9zeRoeT_0Jey80MZH4-eLshVGquRIfj1t3Am6lgRMvQ7L6xj8UTpxzzwBeCbLu42ddQt0mV1dmGCRvGRbwGp75XiLl_J4MLLZgD" onerror="this.style.background='#F4F5F7'" alt="WD1_KH12">
+        <div class="il">AI girl + gold empire + withdraw - amended</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗 + ROI</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$40.55</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv o">0.69%</div></div>
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv g">4</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv g">2</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">1</div></div>
+            <div class="kpi-item"><div class="kl">FDCR</div><div class="kv o">50.0%</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv o">$40.55</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$3.00</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_WD1_KH12"></canvas></div>
+  </div>
+  <div class="ads-note">8/15新上线（WD1_KH10的改版），2天内即产出1笔FDC，FDCR 50.0%，是WD1系列的最新迭代版本。</div>
+</div>
+
+<!-- WD1_KH06 -->
+<div class="ads-card best">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_WD1_KH06</div>
+    <span class="lz lp">VD 视频</span><span class="lz lg">FDCR满分</span>
+    <span class="lz lb2">Active 5天（生命周期53天）</span><span class="lz lg">FDC 2</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQLq-qV-QzGQ-dc-XLv0mIB8l9iIOXqdqCoZ0QBtLd03X--T3lTzm-14YCNqtz2F-pTARkH7-kKtMOnICxgaq4DPRgxUyeWxEITvVGqhIWBHAVwH3EGU54DstmW-sifs_16ju0S2_yOUa7gb-sM42Cwg" onerror="this.style.background='#F4F5F7'" alt="WD1_KH06">
+        <div class="il">Golden Empire slot + Withdrawal</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$28.92</div></div>
+            <div class="kpi-item"><div class="kl">IMP</div><div class="kv">9,926</div></div>
+            <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">54</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv o">0.54%</div></div>
+            <div class="kpi-item"><div class="kl">CPM</div><div class="kv g">$2.91</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv g">5</div></div>
+            <div class="kpi-item"><div class="kl">Chat</div><div class="kv">3</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv g">2</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">2</div></div>
+            <div class="kpi-item"><div class="kl">FDCR</div><div class="kv g">100.0%</div></div>
+          </div>
+        </div>
+        <div class="kpi-section">
+          <div class="ks-label">ROI 层</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">FDA</div><div class="kv g">$8.00</div></div>
+            <div class="kpi-item"><div class="kl">AFDA</div><div class="kv o">$4.00</div></div>
+            <div class="kpi-item"><div class="kl">SDA</div><div class="kv g">$36.00</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$19.00</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv g">$14.46（全周次低）</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_WD1_KH06"></canvas></div>
+  </div>
+  <div class="ads-note">生命周期53天的老牌核心素材，FDCR 100%（2/2），CPA第二低，SDA/GGR表现均不错，效率极高，建议维持投放。</div>
+</div>
+
+<!-- WD8_KH01 -->
+<div class="ads-card best">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_WD8_KH01</div>
+    <span class="lz lp">VD 视频</span><span class="lz lg">CPA最低</span>
+    <span class="lz lb2">Active 3天（生命周期20天）</span><span class="lz lg">FDC 1</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQKpCyra-OrzCQvJcvbLEJonpvtpUqf3Agrhwp3N41EGfR7eoWnhipoaT89mFblDCcvoy10WErgkc7538slPjdkA2QewCxMfn27WSmNsl52_PrV_2-8PdYcFFQxk68mfnJlUDHCJBFuUgc7JPYwKKqHT" onerror="this.style.background='#F4F5F7'" alt="WD8_KH01">
+        <div class="il">One WD + Clover Gold slot</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗 + ROI</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$14.04</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv o">0.65%</div></div>
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv g">4</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv g">2</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">1</div></div>
+            <div class="kpi-item"><div class="kl">FDCR</div><div class="kv g">50.0%</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv g">$14.04（本周最低）</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$30.00</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_WD8_KH01"></canvas></div>
+  </div>
+  <div class="ads-note">CPA全周最低（$14.04），GGR $30.00表现优秀，FDCR 50.0%，是本周综合效率最佳的素材之一，建议加码投放。</div>
+</div>
+
+<!-- BRD3_KH02 -->
+<div class="ads-card warn">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_BRD3_KH02</div>
+    <span class="lz lp">VD 视频</span><span class="lz ly">CTR偏低</span>
+    <span class="lz lb2">Active 5天（生命周期13天）</span><span class="lz lg">FDC 1</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQLYootpQG0B7nfNqplOgpsmbXLyZHrsec9PfYCqlt7rCdGZAio7jLNedBVfZkrBlAYadEKOiXntIcsIDMT3Gpgy4TfZ5D_yhUnQRX-jRYbYU-fpfG3gHkWyFoKHI7F2HQUy6YJD49JnYgZM4-Gt1-7a" onerror="this.style.background='#F4F5F7'" alt="BRD3_KH02">
+        <div class="il">Trusted + Game + Donnie Yen</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗 + ROI</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$49.61</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv r">0.31%（全周最低）</div></div>
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv r">2</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv g">1</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">1</div></div>
+            <div class="kpi-item"><div class="kl">FDCR</div><div class="kv g">100.0%</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv r">$49.61</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$6.00</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_BRD3_KH02"></canvas></div>
+  </div>
+  <div class="ads-note">品牌形象素材（Donnie Yen代言），CTR全周最低（0.31%），虽FDCR达100%但样本仅1笔，流量吸引力有待提升。</div>
+</div>
+
+<h3 style="margin-top:20px">③ 新素材（Active Days≤3，本周新增测试）</h3>
+
+<!-- LCS1_KH02 -->
+<div class="ads-card newads">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_LCS1_KH02</div>
+    <span class="lz lp">VD 视频</span><span class="lz lp">新素材（8/13上线，A/B对照组）· 零转化</span>
+    <span class="lz lb2">Active 4天（生命周期4天）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQJYNZX-uQEAotqymX_yuhxTCECsQWF_FVZ1G4qQykZuA0uyhJwwdrlql8yT5oz04-y3wJ5BfXnLrYlZGP2CKVjGpR6T4GbFOV1va8pizAM4Vcno3mZtVevPGWmCCvK_ImheojLP3QgCNZtIoRedDyLG" onerror="this.style.background='#F4F5F7'" alt="LCS1_KH02">
+        <div class="il">License hook + AI girl</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$73.47</div></div>
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv r">2</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv r">0</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_LCS1_KH02"></canvas></div>
+  </div>
+  <div class="ads-note">与LCS1_KH01为A/B对照组（同为"License"主题，不同钩子文案），本组零转化，与KH01表现分化明显，建议对比创意差异并优先保留表现更好的版本。</div>
+</div>
+
+<!-- WD8_KH06 -->
+<div class="ads-card newads">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_WD8_KH06</div>
+    <span class="lz lp">VD 视频</span><span class="lz lp">测试变体·零转化</span>
+    <span class="lz lb2">Active 2天（生命周期12天）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQJWp9Xnc80K_ilSShf5KLiHTfwSTIUYQtxROvZoa9etJKV_sA2F0W2958dFXHRPSAkOcrjXMN2vKKhdqgtvGlico3qoFgnHQZr_oBwGri-wNgg1aHAUn3-5j44Ah0qPrzLmD0UsZwp4TStBdYf86WwN" onerror="this.style.background='#F4F5F7'" alt="WD8_KH06">
+        <div class="il">Multiple WD + Clover Gold slot (amended 2)</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$11.23</div></div>
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv r">3</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv r">1</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv r">0</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_WD8_KH06"></canvas></div>
+  </div>
+  <div class="ads-note">WD8系列的"多次提现"改版，REG产出1人，尚无FDC，建议继续观察。</div>
+</div>
+
+<!-- TST1_KH04 -->
+<div class="ads-card newads">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_TST1_KH04</div>
+    <span class="lz lp">VD 视频</span><span class="lz lp">新素材（8/13上线，评价类）· 零转化</span>
+    <span class="lz lb2">Active 4天（生命周期4天）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQJ6NPDsoIFIiVyrbq36ePGdnKgwHGs7HHjW0Ge6cZ06M2KDyvgLNOk9xiCf9opEujhY8u98tFAg3lH8Kl_sOL5QUMgOSu5UpMHEqzJeroeljaEqbk43llNPnoJ_TarVnPKXHh-IRgEUHt5WBdP0ErDR" onerror="this.style.background='#F4F5F7'" alt="TST1_KH04">
+        <div class="il">AI girl + one review</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$6.84</div></div>
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv r">0</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv r">0</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_TST1_KH04"></canvas></div>
+  </div>
+  <div class="ads-note">8/13新上线（用户评价见证主题），4天内零Lead零转化，建议评估是否需要调整创意方向。</div>
+</div>
+
+<!-- LVE3_KH05 -->
+<div class="ads-card newads">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_LVE3_KH05</div>
+    <span class="lz lp">VD 视频</span><span class="lz lp">新素材（8/13上线，极小额测试）· 零转化</span>
+    <span class="lz lb2">Active 2天（生命周期2天）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQJeTBBrq72VhdK7KKGWFPECN0qyUqsNoMf8-N7qC2ugEYRR-Qtl5Oa3R8PZFkpLE9YoLLPIYhtxmFTEKwZ_CxXoLz6g24Kkwx4G1j1WJ7y76gKr0II5FegU0xSyT8TXzGSZl2BUuQTkclHut-2t4sX9" onerror="this.style.background='#F4F5F7'" alt="LVE3_KH05">
+        <div class="il">Live Casino - Sicbo</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$2.50</div></div>
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv r">0</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv r">0</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_LVE3_KH05"></canvas></div>
+  </div>
+  <div class="ads-note">8/13新上线的Live Sicbo素材，极小额测试，尚无转化数据。</div>
+</div>
+
+<!-- SLT4_KH02 -->
+<div class="ads-card newads">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_SLT4_KH02</div>
+    <span class="lz lp">VD 视频</span><span class="lz lp">生命周期尾声·极小额残留</span>
+    <span class="lz lb2">Active 1天（生命周期32天）</span><span class="lz lg">FDC 1</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQL_S5yI7wkj7X4fU8Z5x_B6kPM-4RkXOej7o9t3-S40x3SFWjhBldQ0psNory7WiPCTTpSXYyx_0oFp6W3CZ95_jafeRBhoTB9U6dbGwp0ZJDcH6WbCwsuH7YCmaQzaTVEn8Tj5OSm_OaWRAcTjsV9Q" onerror="this.style.background='#F4F5F7'" alt="SLT4_KH02">
+        <div class="il">Ai girl + boxing king</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗 + ROI</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$0.78</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv g">1.79%</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv g">1（延迟首存）</div></div>
+            <div class="kpi-item"><div class="kl">GGR</div><div class="kv g">$13.00</div></div>
+            <div class="kpi-item"><div class="kl">CPA</div><div class="kv g">$0.78</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_SLT4_KH02"></canvas></div>
+  </div>
+  <div class="ads-note">生命周期32天素材，本周仅极小额残留投放（8/10单日$0.78），却产出1笔跨日延迟首存的FDC，GGR $13.00，CPA因分母极小而失真，即将自然退出投放。</div>
+</div>
+
+<!-- LVE5_KH01 -->
+<div class="ads-card newads">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_LVE5_KH01</div>
+    <span class="lz lp">VD 视频</span><span class="lz lp">生命周期尾声·零转化</span>
+    <span class="lz lb2">Active 1天（生命周期39天）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQLvPyhg9LdZhxdpyeMVmOtUMlbcPixBIsFlW2km8mQ8aCL8jOINQIE9QMumon7Wj2DsIs1opVfuiOJe1h-H14S_XOavJUClXSRnOyninK8Bep2BIC5rCepsZ-fxIvo6W3zc3m2MgIlulZivN1VvN1Xi" onerror="this.style.background='#F4F5F7'" alt="LVE5_KH01">
+        <div class="il">Live + Bosco</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$0.01</div></div>
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv r">0</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv r">0</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_LVE5_KH01"></canvas></div>
+  </div>
+  <div class="ads-note">生命周期39天，本周仅极小额残留投放（$0.01），即将自然退出。</div>
+</div>
+
+<h3 style="margin-top:20px">② 有花费无FDC（低效素材）</h3>
+
+<!-- SLT8_KH01 -->
+<div class="ads-card low">
+  <div class="ads-head">
+    <div class="an">USC_OK18_TRSA_VD_SLT8_KH01</div>
+    <span class="lz lp">VD 视频</span><span class="lz lb2">RM贡献·零FDC</span>
+    <span class="lz lb2">Active 4天（生命周期29天）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img">
+        <img src="https://www.facebook.com/ads/image/?d=AQKWLZthjFRO-4v0HgHGxNtbxBHqLDySVVg6kF0O3bsUhnpsSRfCwuBuGMBQQZZ1OTec8ybku-c12edrXc9PAk3Tph8eJbFCSCzT-6-o95sCTJBUkuDXt1_1-dFNVsxHBojNaEwT10i0DTfzAooLXujI" onerror="this.style.background='#F4F5F7'" alt="SLT8_KH01">
+        <div class="il">Slot + Bosco</div>
+      </div>
+      <div class="ads-kpis">
+        <div class="kpi-section">
+          <div class="ks-label">流量层 + 转化漏斗</div>
+          <div class="kpi-row">
+            <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$66.12</div></div>
+            <div class="kpi-item"><div class="kl">CTR</div><div class="kv o">0.62%</div></div>
+            <div class="kpi-item"><div class="kl">Lead</div><div class="kv r">10</div></div>
+            <div class="kpi-item"><div class="kl">REG</div><div class="kv r">1</div></div>
+            <div class="kpi-item"><div class="kl">FDC</div><div class="kv r">0</div></div>
+            <div class="kpi-item"><div class="kl">RM/RD</div><div class="kv g">2人 / $287.00</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist">
+    <h5>全历史花费趋势（Spend / CTR / FDC）</h5>
+    <div class="hist-wrap"><canvas id="hist_SLT8_KH01"></canvas></div>
+  </div>
+  <div class="ads-note">生命周期29天核心长青素材，Lead产出10人为②类最高，但本周无新客FDC，带来2笔老玩家RD回流（合计$287.00），是本周RD峰值日（8/11）的直接来源。</div>
+</div>
+
+<div class="section-summary">
+  <h4>📊 Section 5 · 零花费转化素材说明</h4>
+  <p style="font-size:12.5px;color:#5E6C84;margin:6px 0"><strong>④ 零花费转化：</strong>
+  WD3_KH01（FDC2/FDA$7.88/SDA$15.88/GGR−$42.24，素材已停投）。另有 Organic_OK188KH（自然流量，Chat21/REG7/FDC1/FDA$5/GGR$5.00，RM2/RD$22.00）。</p>
+</div>
+
+<!-- ══ 六 · 素材核心指标对比排名 ══ -->
+<h2>六 · 素材核心指标对比排名</h2>
+<p class="sn">排序：按 GGR 降序（GGR 为最终盈利指标）· 仅覆盖①有花费有FDC非新素材，②③④类见五节</p>
+
+<div class="rank-table">
+  <div class="rank-header">
+    <div>图</div><div>#</div><div>素材</div><div>Ads Description</div>
+    <div>花费($)</div><div>FDC</div><div>FDA($)</div><div>FDCR</div>
+    <div>AFDA($)</div><div>CPA($)</div><div>FD Ads Rate</div><div>GGR($)</div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-data">
+      <div><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLYDtr5Tk2R5cFKmE_kratZYa3FW346TROfBymvY8n0Gue5Msr8urf_WAAq5dADnb_2pdrNUj83EsfB86JiE6Xu0ZQbxwuY_YZMqWRR18AFbKmpgwkbdhxDB4dY0Lna9JQmIh87gbLVAsHzAce4lD7K" onerror="this.outerHTML='<div class=rank-no-img>WD4</div>'"></div>
+      <div style="font-weight:700;color:#00875A">1</div>
+      <div class="code" style="font-size:10px">WD4_KH01</div>
+      <div style="font-size:11px">ai girl withdrawal + fortune gem</div>
+      <div>$64.83</div><div>4</div><div>$17.94</div>
+      <div>40.0%</div><div>$4.49</div>
+      <div style="color:#00875A">$16.21</div><div>3.61</div>
+      <div style="color:#00875A;font-weight:700">$22.94</div>
+    </div>
+    <div class="rank-desc"><span class="grade-badge gb-best">GGR最高·CPA最低</span>&nbsp;本周效率标杆，REG产出也最多，建议维持并加码投放。</div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-data">
+      <div><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLq-qV-QzGQ-dc-XLv0mIB8l9iIOXqdqCoZ0QBtLd03X--T3lTzm-14YCNqtz2F-pTARkH7-kKtMOnICxgaq4DPRgxUyeWxEITvVGqhIWBHAVwH3EGU54DstmW-sifs_16ju0S2_yOUa7gb-sM42Cwg" onerror="this.outerHTML='<div class=rank-no-img>WD1K6</div>'"></div>
+      <div>2</div>
+      <div class="code" style="font-size:10px">WD1_KH06</div>
+      <div style="font-size:11px">Golden Empire slot + Withdrawal</div>
+      <div>$28.92</div><div>2</div><div>$8.00</div>
+      <div style="color:#00875A">100.0%</div><div>$4.00</div>
+      <div style="color:#00875A">$14.46</div><div>1.52</div>
+      <div style="color:#00875A">$19.00</div>
+    </div>
+    <div class="rank-desc"><span class="grade-badge gb-best">FDCR满分</span>&nbsp;老牌核心素材，转化质量极高，CPA第二低，建议维持投放。</div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-data">
+      <div><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLqpGO2lQge5AseHBnpYOAhWkb4bJkP46mJcjs56LpKlgzUge-Ui1oeiL5hJY8UsHoKfRm4YuhTASNYOJnTdX-bOrWTFRIHzzRmwbXAz1U2vLyKTP_d4RSbqSOOtZl2MvlB8AMJhKxBmZvgK6QUD3PI" onerror="this.outerHTML='<div class=rank-no-img>WD1K2</div>'"></div>
+      <div>3</div>
+      <div class="code" style="font-size:10px">WD1_KH02_IM</div>
+      <div style="font-size:11px">Website + withdraw + AI girl</div>
+      <div style="color:#DE350B;font-weight:700">$224.05（最高）</div><div>3</div><div>$18.00</div>
+      <div>42.9%</div><div>$6.00</div>
+      <div style="color:#DE350B">$74.68</div><div>12.45</div>
+      <div style="color:#00875A">$18.00</div>
+    </div>
+    <div class="rank-desc"><span class="grade-badge gb-mid">规模最大但CPA偏高</span>&nbsp;花费最高，Lead/Chat产出不错，但转化效率有待提升。</div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-data">
+      <div><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLkNBJv7xw69EHPyfoDAbSMKPo7LrKQoL_UPQFp2i7g0Uu5ChJdk7hLvqxaeJxblr6l11ZxBRyPMN7cVKJpW4lCBuV0EhBzII0O5u1ze3CvKL0IJM-GT0kbie4w4LpSYtMLjLeqqQsIZVUST7onvQur" onerror="this.outerHTML='<div class=rank-no-img>WD1K10</div>'"></div>
+      <div>4</div>
+      <div class="code" style="font-size:10px">WD1_KH10</div>
+      <div style="font-size:11px">AI girl + gold empire + withdraw</div>
+      <div>$95.06</div><div>2</div><div>$8.00</div>
+      <div>50.0%</div><div>$4.00</div>
+      <div style="color:#DE350B">$47.53</div><div>5.28</div>
+      <div style="color:#00875A">$18.00</div>
+    </div>
+    <div class="rank-desc"><span class="grade-badge gb-mid">FDCR良好</span>&nbsp;转化质量不错，但CTR偏低，流量效率有提升空间。</div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-data">
+      <div><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQKXeZ35IzQ-QVoEJ_L3bHepD_4mCT03-f2PM-KqyR3F5WiktwpmODVmrC69E2_IWNdDjOSWYc5W7Rmu3j5iSdqxT5xVSXnBI5SMBduFA37a61oRq801Kj0yHdH47LhNYK-sxPNMw5EaGabZQnmOBdQo" onerror="this.outerHTML='<div class=rank-no-img>LCS1</div>'"></div>
+      <div>5</div>
+      <div class="code" style="font-size:10px">LCS1_KH01</div>
+      <div style="font-size:11px">License + AI girl hook</div>
+      <div>$72.58</div><div>2</div><div>$8.00</div>
+      <div style="color:#00875A">50.0%</div><div>$4.00</div>
+      <div style="color:#DE350B">$36.29</div><div>5.58</div>
+      <div style="color:#00875A">$13.00</div>
+    </div>
+    <div class="rank-desc"><span class="grade-badge gb-mid">新素材·表现亮眼</span>&nbsp;8/13新上线即取得优秀FDCR，值得持续加码。</div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-data">
+      <div><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQKpCyra-OrzCQvJcvbLEJonpvtpUqf3Agrhwp3N41EGfR7eoWnhipoaT89mFblDCcvoy10WErgkc7538slPjdkA2QewCxMfn27WSmNsl52_PrV_2-8PdYcFFQxk68mfnJlUDHCJBFuUgc7JPYwKKqHT" onerror="this.outerHTML='<div class=rank-no-img>WD8K1</div>'"></div>
+      <div>6</div>
+      <div class="code" style="font-size:10px">WD8_KH01</div>
+      <div style="font-size:11px">One WD + Clover Gold slot</div>
+      <div>$14.04</div><div>1</div><div>$10.00</div>
+      <div style="color:#00875A">50.0%</div><div>$10.00</div>
+      <div style="color:#00875A;font-weight:700">$14.04（最低）</div><div>0.47</div>
+      <div style="color:#00875A">$30.00</div>
+    </div>
+    <div class="rank-desc"><span class="grade-badge gb-best">CPA最低</span>&nbsp;综合效率最佳素材之一，建议加码。</div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-data">
+      <div><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLw3LFSZIZrUgesoikqvxYzv1AvAqEyeCx6Oxgo_KRMuU9D7xjl24R8C2kavwzPRg9rzcK_KCkRp9UfNzh3lnajspkUhniZi3K-upcPiMIj-sBh2VZfeNQOFTsKuQ4q5Imbo5wfnxMcUXLfbMNbilFX" onerror="this.outerHTML='<div class=rank-no-img>WD1K11</div>'"></div>
+      <div>7</div>
+      <div class="code" style="font-size:10px">WD1_KH11</div>
+      <div style="font-size:11px">3 withdraw + 3 PG slot (no big win)</div>
+      <div>$43.65</div><div>2</div><div>$13.00</div>
+      <div style="color:#00875A">50.0%</div><div>$6.50</div>
+      <div style="color:#00875A">$21.82</div><div>13.99</div>
+      <div style="color:#00875A">$3.12</div>
+    </div>
+    <div class="rank-desc"><span class="grade-badge gb-mid">CPA健康</span>&nbsp;转化质量良好，但GGR偏低。</div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-data">
+      <div><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLn8ybyfjVlhh5TDPSkaaHSXbZ9gDn6jJqdsF88959TwuGxwLPdw9zeRoeT_0Jey80MZH4-eLshVGquRIfj1t3Am6lgRMvQ7L6xj8UTpxzzwBeCbLu42ddQt0mV1dmGCRvGRbwGp75XiLl_J4MLLZgD" onerror="this.outerHTML='<div class=rank-no-img>WD1K12</div>'"></div>
+      <div>8</div>
+      <div class="code" style="font-size:10px">WD1_KH12</div>
+      <div style="font-size:11px">AI girl + gold empire + withdraw - amended</div>
+      <div>$40.55</div><div>1</div><div>$3.00</div>
+      <div>50.0%</div><div>$3.00</div>
+      <div style="color:#DE350B">$40.55</div><div>13.52</div>
+      <div style="color:#00875A">$3.00</div>
+    </div>
+    <div class="rank-desc"><span class="grade-badge gb-new">新素材·首笔转化</span>&nbsp;8/15新上线即取得转化，样本仍小。</div>
+  </div>
+
+  <div class="rank-row">
+    <div class="rank-data">
+      <div><img class="rank-img" src="https://www.facebook.com/ads/image/?d=AQLYootpQG0B7nfNqplOgpsmbXLyZHrsec9PfYCqlt7rCdGZAio7jLNedBVfZkrBlAYadEKOiXntIcsIDMT3Gpgy4TfZ5D_yhUnQRX-jRYbYU-fpfG3gHkWyFoKHI7F2HQUy6YJD49JnYgZM4-Gt1-7a" onerror="this.outerHTML='<div class=rank-no-img>BRD3</div>'"></div>
+      <div>9</div>
+      <div class="code" style="font-size:10px">BRD3_KH02</div>
+      <div style="font-size:11px">Trusted + Game + Donnie Yen</div>
+      <div>$49.61</div><div>1</div><div>$3.00</div>
+      <div>100.0%</div><div>$3.00</div>
+      <div style="color:#DE350B">$49.61</div><div>16.54</div>
+      <div style="color:#00875A">$6.00</div>
+    </div>
+    <div class="rank-desc"><span class="grade-badge gb-warn">CTR偏低</span>&nbsp;流量吸引力不足，样本量小，需继续观察。</div>
+  </div>
+
+  <div class="s7-note" style="padding:8px 14px;font-size:11px">
+    ⌀ 新素材（③，共6支）：LCS1_KH02 / WD8_KH06 / TST1_KH04 / LVE3_KH05 / SLT4_KH02 / LVE5_KH01 — 均生命周期较短或为老素材尾声残留，SLT4_KH02虽有1笔延迟首存但样本过小，详见五节。
+    <br>⌀ 低效素材（②，共1支）：SLT8_KH01 — 本周零FDC但贡献两笔老客RD回流，详见五节。
+  </div>
+</div>
+
+<div class="section-summary">
+  <h4>📊 Section 6 · 素材评级总结</h4>
+  <p style="font-size:12.5px;color:#5E6C84;margin:6px 0">
+    <strong>本周素材格局呈现"多点开花"的健康态势：WD4_KH01（GGR最高、CPA最低）、WD1_KH06（FDCR满分）、WD8_KH01（CPA最低）三支素材共同支撑本周良好的转化质量。8/13新上线的LCS1_KH01（"License合规信任"主题）表现亮眼，值得持续加码；同批A/B对照组LCS1_KH02则零转化，建议对比两版本创意差异。</strong>
+    WD1_KH02_IM虽花费最高但CPA偏高，是本周唯一需要重点关注效率的中大规模素材。BRD3_KH02（品牌代言素材）CTR全周最低，流量吸引力有待提升。
+    <strong>下周行动优先级：</strong>① 加码WD4_KH01、WD1_KH06、WD8_KH01三支高效素材；② 排查WD1_KH02_IM的CPA偏高原因；③ 持续观察LCS1_KH01表现并对比LCS1_KH02；④ 评估BRD3_KH02是否需要更新创意；⑤ 8/27起本周未成熟D15陆续成熟，纳入下周完整评估。</p>
+</div>
+
+<!-- ══ 七 · 玩家留存层数据 ══ -->
+<h2>七 · 玩家留存层数据</h2>
+<p class="sn">今天（8/26）· 成熟条件：D7 diff≥7d，D15 diff≥15d</p>
+
+<h3>子节 A：本周（W32，8/10–8/16）首存玩家留存 — D7全数成熟，D15部分成熟</h3>
+<p class="sn">W32 FDC=22 · D7 全数成熟（diff=10–16d）✓ · D15仅8/10、8/11成熟（diff=16/15），其余5天未成熟</p>
+<table>
+  <thead>
+    <tr><th>首存日</th><th>FDC</th><th>FDA</th><th>D7R ✓</th><th>D7CR ✓</th><th>D7A ✓</th><th>D15R</th><th>D15A</th><th>D15状态</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>8/10 ✓</td><td>3</td><td>$16.00</td>
+      <td>3 ✓</td><td>100.0%</td><td>$28.00</td>
+      <td>3 ✓</td>
+      <td>$28.00</td>
+      <td><span class="lz lg">D15已熟</span></td>
+    </tr>
+    <tr>
+      <td>8/11 ✓</td><td>6</td><td>$28.88</td>
+      <td>4 ✓</td><td>66.7%</td><td>$28.00</td>
+      <td>4 ✓</td>
+      <td>$28.00</td>
+      <td><span class="lz lg">D15已熟</span></td>
+    </tr>
+    <tr>
+      <td>8/12</td><td>4</td><td>$17.94</td>
+      <td>1 ✓</td><td>25.0%</td><td>$10.00</td>
+      <td>1<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td>$10.00<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td><span class="lz ly">未熟·8/27成熟</span></td>
+    </tr>
+    <tr>
+      <td>8/13</td><td>2</td><td>$13.00</td>
+      <td>1 ✓</td><td>50.0%</td><td>$9.00</td>
+      <td>1<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td>$9.00<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td><span class="lz ly">未熟·8/28成熟</span></td>
+    </tr>
+    <tr>
+      <td>8/14</td><td>3</td><td>$11.00</td>
+      <td>0 ✓<br><span class="s7-note">已成熟·真实零续存</span></td><td>0.0%</td><td>$0.00</td>
+      <td>0<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td>$0.00<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td><span class="lz ly">未熟·8/29成熟</span></td>
+    </tr>
+    <tr>
+      <td>8/15</td><td>2</td><td>$8.00</td>
+      <td>0 ✓<br><span class="s7-note">已成熟·真实零续存</span></td><td>0.0%</td><td>$0.00</td>
+      <td>0<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td>$0.00<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td><span class="lz ly">未熟·8/30成熟</span></td>
+    </tr>
+    <tr>
+      <td>8/16</td><td>2</td><td>$10.00</td>
+      <td>1 ✓</td><td>50.0%</td><td>$20.00</td>
+      <td>1<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td>$25.00<br><span class="s7-note">未成熟·仍在累积</span></td>
+      <td><span class="lz ly">未熟·8/31成熟</span></td>
+    </tr>
+    <tr class="tr">
+      <td><strong>W32 合计</strong></td>
+      <td><strong>22</strong></td><td><strong>$104.82</strong></td>
+      <td><strong>10 ✓</strong></td><td><strong>45.5%</strong></td><td><strong>$95.00</strong></td>
+      <td><strong>10（当前累计）</strong></td>
+      <td><strong>$100.00（当前累计）</strong><br><span class="s7-note">仅8/10–8/11已全熟；8/12–8/16未熟，成熟日8/27–8/31</span></td>
+      <td><strong>⚠ 部分成熟（8/10–8/11已熟 · 8/12–8/16未熟）</strong></td>
+    </tr>
+  </tbody>
+</table>
+<div class="panel ok">
+  <div class="pi">✅</div>
+  <div class="pb">本周（W32）D7 已全数成熟，是本周期难得的完整评估：D7 Ads Rate 8.361，D7CR 45.5%（10/22表现尚可），D7周合计D7A仅$95.00，远低于$2,240目标。</div>
+</div>
+
+<h3>子节 B：上周（W31，8/3–8/9）首存玩家留存（L2 正式评估，全数成熟）</h3>
+<p class="sn">W31 FDC=24 · D7 全数成熟（diff=17–23d）✓ · D15 全数成熟（diff=17–23d）✓</p>
+<table>
+  <thead>
+    <tr><th>首存日</th><th>FDC</th><th>FDA</th><th>D7R ✓</th><th>D7CR ✓</th><th>D7A ✓</th><th>D15R ✓</th><th>D15A ✓</th><th>D15状态</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>8/3 ✓</td><td>6</td><td>$51.00</td>
+      <td>1 ✓</td><td>16.7%</td><td>$25.00</td>
+      <td>1 ✓</td>
+      <td>$25.00</td>
+      <td><span class="lz lg">D15已熟</span></td>
+    </tr>
+    <tr>
+      <td>8/4 ✓</td><td>4</td><td>$16.00</td>
+      <td>3 ✓</td><td>75.0%</td><td>$47.00</td>
+      <td>3 ✓</td>
+      <td>$127.88</td>
+      <td><span class="lz lg">D15已熟</span></td>
+    </tr>
+    <tr>
+      <td>8/5 ✓</td><td>7</td><td>$39.00</td>
+      <td>4 ✓</td><td>57.1%</td><td>$209.00</td>
+      <td>4 ✓</td>
+      <td style="color:#0052CC"><strong>$246.00</strong></td>
+      <td><span class="lz lg">D15已熟</span></td>
+    </tr>
+    <tr>
+      <td>8/6 ✓</td><td>2</td><td>$13.75</td>
+      <td>1 ✓</td><td>50.0%</td><td>$10.00</td>
+      <td>1 ✓</td>
+      <td>$10.00</td>
+      <td><span class="lz lg">D15已熟</span></td>
+    </tr>
+    <tr>
+      <td>8/7 ✓</td><td>2</td><td>$13.00</td>
+      <td>0 ✓<br><span class="s7-note">已成熟·真实零续存</span></td><td>0.0%</td><td>$0.00</td>
+      <td>0 ✓<br><span class="s7-note">已成熟·真实零续存</span></td>
+      <td>$0.00</td>
+      <td><span class="lz lg">D15已熟</span></td>
+    </tr>
+    <tr>
+      <td>8/8 ✓</td><td>0<br><span class="s7-note">无当日首存</span></td><td>—</td>
+      <td>—</td><td>—</td><td>—</td>
+      <td>—</td><td>—</td>
+      <td><span class="lz ln">无当日首存</span></td>
+    </tr>
+    <tr>
+      <td>8/9 ✓</td><td>3</td><td>$13.00</td>
+      <td>0 ✓<br><span class="s7-note">已成熟·真实零续存</span></td><td>0.0%</td><td>$0.00</td>
+      <td>0 ✓<br><span class="s7-note">已成熟·真实零续存</span></td>
+      <td>$0.00</td>
+      <td><span class="lz lg">D15已熟</span></td>
+    </tr>
+    <tr class="tr">
+      <td><strong>W31 合计</strong></td>
+      <td><strong>24</strong></td><td><strong>$145.75</strong></td>
+      <td><strong>9 ✓</strong></td><td><strong>37.5%</strong></td><td><strong>$291.00</strong></td>
+      <td><strong>9 ✓</strong></td>
+      <td><strong>$408.88</strong></td>
+      <td><strong>✅ 全数已成熟</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="panel err">
+  <div class="pi">🚨</div>
+  <div class="pb">
+    <strong>W31 L2 正式评估：D7 Ads Rate 3.193（目标≤0.25 ✗，超标约11.8倍），D7周合计D7A $291.00远低于$2,240目标（达成率13.0%）。</strong>
+    D7CR 37.5%中等偏弱。D15A $408.88中，8/5单笔D15A $246.00占比60.2%，续存质量仍高度集中于个别玩家，8/7、8/9两天出现真实零续存，反映整体续存基础仍较薄弱。</div>
+</div>
+
+<!-- ══ 八 · 核心结论与建议 ══ -->
+<h2>八 · 核心结论与建议</h2>
+
+<div class="panel warn">
+  <div class="pi">⚠️</div>
+  <div class="pb"><strong>本周花费与流量同步收缩，转化各环节相应下滑，但漏斗效率不降反升（Chat→REG 47.9%、REG→FDC 48.89%均较W31改善），本周是近期难得的"全周无零转化日"，转化持续性良好。</strong></div>
+</div>
+
+<div class="panel info">
+  <div class="pi">📊</div>
+  <div class="pb"><strong>WD4_KH01（GGR最高、CPA最低）、WD1_KH06（FDCR满分）、WD8_KH01（CPA最低）是本周表现最佳的三支素材，建议优先加码。新素材LCS1_KH01（"License合规信任"主题）表现亮眼，值得持续观察并加码。</strong></div>
+</div>
+
+<div class="panel err">
+  <div class="pi">🚨</div>
+  <div class="pb"><strong>W31的L2正式评估严重未达标（D7 Ads Rate 3.193，超标近12倍），本周（W32）D7也已全数成熟并可完整评估，结果同样不理想（D7 Ads Rate 8.361），两周的D7周合计D7A均远低于$2,240目标，续存质量是持续存在的核心短板。</strong></div>
+</div>
+
+<div class="panel info">
+  <div class="pi">📊</div>
+  <div class="pb"><strong>下周行动优先级：</strong>① 加码WD4_KH01、WD1_KH06、WD8_KH01三支高效素材；② 排查WD1_KH02_IM花费最高但CPA偏高的原因；③ 持续观察LCS1_KH01并对比同批A/B对照组LCS1_KH02；④ 评估BRD3_KH02（CTR全周最低）是否需要调整创意；⑤ 8/27起本周未成熟D15陆续成熟，纳入下周完整评估；⑥ 针对D7A金额持续偏低的问题，评估是否需要在受众定向或首存激励机制上做调整。</div>
+</div>
+
+<hr>
+<p style="font-size:11px;color:#6B778C;text-align:center">
+  【USC 分析】USC - OK188KH 周报 · 2026第32周 · 生成：2026年8月26日（周三）<br>
+  汇报周期：2026年8月10日（周一）—— 8月16日（周日）· 货币：USD
+</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const LABELS = ["8/10 周一","8/11 周二","8/12 周三","8/13 周四","8/14 周五","8/15 周六","8/16 周日"];
+const SPEND  = [123.16,86.06,110.46,138.47,137.58,96.58,101.93];
+const FDA    = [16.0,28.88,17.94,13.0,11.0,8.0,10.0];
+const GGR    = [-19.0,36.88,42.94,9.0,16.0,8.0,15.0];
+const LEAD   = [18,17,10,15,11,9,10];
+const CHAT   = [20,14,13,14,11,8,14];
+const REG    = [8,9,5,8,5,4,6];
+const FDC    = [3,6,4,2,3,2,2];
+
+new Chart(document.getElementById('spendChart'),{
+  data:{
+    labels:LABELS,
+    datasets:[
+      {type:'bar',label:'Ads Spend($)',data:SPEND,backgroundColor:'#0052CC',borderRadius:3,yAxisID:'y',barPercentage:0.5},
+      {type:'bar',label:'FDA($)',data:FDA,backgroundColor:'#FF8B00',borderRadius:3,yAxisID:'y',barPercentage:0.5},
+      {type:'line',label:'GGR($)',data:GGR,borderColor:'#00875A',backgroundColor:'transparent',tension:0.3,pointRadius:4,pointBackgroundColor:'#00875A',yAxisID:'y2'},
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    interaction:{mode:'index',intersect:false},
+    plugins:{legend:{display:false}},
+    scales:{
+      y:{type:'linear',position:'left',ticks:{color:'#5E6C84',font:{size:10}}},
+      y2:{type:'linear',position:'right',grid:{drawOnChartArea:false},ticks:{color:'#00875A',font:{size:10}}}
+    }
+  }
+});
+
+new Chart(document.getElementById('convChart'),{
+  data:{
+    labels:LABELS,
+    datasets:[
+      {type:'bar',label:'Lead',data:LEAD,backgroundColor:'rgba(189,215,252,0.85)',borderRadius:3,barPercentage:0.6},
+      {type:'bar',label:'Chat',data:CHAT,backgroundColor:'#0052CC',borderRadius:3,barPercentage:0.6},
+      {type:'bar',label:'REG',data:REG,backgroundColor:'#FF8B00',borderRadius:3,barPercentage:0.6},
+      {type:'bar',label:'FDC',data:FDC,backgroundColor:'#00875A',borderRadius:3,barPercentage:0.6},
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,
+    interaction:{mode:'index',intersect:false},
+    plugins:{legend:{display:false}},
+    scales:{x:{ticks:{color:'#5E6C84',font:{size:10}}},y:{ticks:{color:'#5E6C84',font:{size:10}}}}
+  }
+});
+
+function makeHistChart(canvasId, labels, spend, ctr, fdc){
+  const c = document.getElementById(canvasId);
+  if(!c) return;
+  new Chart(c,{
+    data:{
+      labels,
+      datasets:[
+        {type:'bar', label:'Spend($)', data:spend, backgroundColor:'rgba(0,82,204,0.25)', borderColor:'rgba(0,82,204,0.5)', borderWidth:1, yAxisID:'ySpend', barPercentage:0.8},
+        {type:'line',label:'CTR(%)', data:ctr, borderColor:'#FF8B00', backgroundColor:'transparent', tension:0.3, pointRadius:2, yAxisID:'yCTR', borderWidth:1.5},
+        {type:'bar', label:'FDC', data:fdc, backgroundColor:'rgba(0,135,90,0.75)', borderRadius:2, yAxisID:'yFDC', barPercentage:0.4},
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{legend:{position:'top',labels:{font:{size:9},boxWidth:8,padding:8,color:'#5E6C84'}}},
+      scales:{
+        ySpend:{type:'linear',position:'left',display:true,ticks:{color:'#0052CC',font:{size:8}},title:{display:true,text:'Spend($)',color:'#0052CC',font:{size:8}}},
+        yCTR:{type:'linear',position:'right',display:true,grid:{drawOnChartArea:false},ticks:{color:'#FF8B00',font:{size:8}},title:{display:true,text:'CTR(%)',color:'#FF8B00',font:{size:8}}},
+        yFDC:{type:'linear',position:'right',display:false},
+        x:{ticks:{color:'#5E6C84',font:{size:8},maxTicksLimit:12}}
+      }
+    }
+  });
+}
+
+// WD1_KH02_IM (n=29)
+const l_WD1_KH02_IM=["6/29", "6/30", "7/1", "7/2", "7/3", "7/4", "7/8", "7/9", "7/10", "7/26", "7/27", "7/29", "7/30", "7/31", "8/1", "8/2", "8/3", "8/4", "8/5", "8/6", "8/7", "8/8", "8/10", "8/11", "8/12", "8/13", "8/14", "8/15", "8/16"];
+const s_WD1_KH02_IM=[7.95, 8.67, 6.65, 11.98, 7.25, 3.92, 6.67, 4.47, 11.58, 1.92, 4.89, 22.61, 30.4, 27.32, 34.31, 28.13, 15.12, 24.7, 35.94, 22.52, 21.28, 6.69, 20.05, 16.34, 33.35, 42.27, 44.76, 30.87, 36.41];
+const c_WD1_KH02_IM=[1.42, 1.72, 1.56, 0.98, 1.69, 1.67, 1.31, 2.47, 2.07, 4.17, 1.03, 1.22, 1.15, 1.22, 1.64, 1.44, 1.69, 1.28, 1.14, 0.83, 0.8, 2.26, 0.64, 0.91, 0.58, 1.14, 0.94, 1.07, 0.92];
+const f_WD1_KH02_IM=[0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 4, 5, 1, 1, 4, 2, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0];
+makeHistChart('hist_WD1_KH02_IM', l_WD1_KH02_IM, s_WD1_KH02_IM, c_WD1_KH02_IM, f_WD1_KH02_IM);
+
+// BRD3_KH02 (n=11)
+const l_BRD3_KH02=["8/4", "8/5", "8/6", "8/7", "8/8", "8/9", "8/10", "8/11", "8/12", "8/13", "8/14"];
+const s_BRD3_KH02=[9.75, 16.27, 19.65, 25.79, 18.76, 2.94, 20.56, 11.84, 2.57, 14.52, 0.12];
+const c_BRD3_KH02=[0.34, 0.47, 0.26, 0.22, 0.52, 1.19, 0.27, 0.36, 0.0, 0.53, 0.0];
+const f_BRD3_KH02=[0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0];
+makeHistChart('hist_BRD3_KH02', l_BRD3_KH02, s_BRD3_KH02, c_BRD3_KH02, f_BRD3_KH02);
+
+// LCS1_KH01 (n=4)
+const l_LCS1_KH01=["8/13", "8/14", "8/15", "8/16"];
+const s_LCS1_KH01=[10.23, 27.21, 12.34, 22.8];
+const c_LCS1_KH01=[1.15, 1.09, 0.66, 0.27];
+const f_LCS1_KH01=[0, 2, 0, 0];
+makeHistChart('hist_LCS1_KH01', l_LCS1_KH01, s_LCS1_KH01, c_LCS1_KH01, f_LCS1_KH01);
+
+// LCS1_KH02 (n=4)
+const l_LCS1_KH02=["8/13", "8/14", "8/15", "8/16"];
+const s_LCS1_KH02=[11.27, 21.77, 15.13, 25.3];
+const c_LCS1_KH02=[0.88, 0.37, 0.44, 0.26];
+const f_LCS1_KH02=[0, 0, 0, 0];
+makeHistChart('hist_LCS1_KH02', l_LCS1_KH02, s_LCS1_KH02, c_LCS1_KH02, f_LCS1_KH02);
+
+// LVE3_KH05 (n=2)
+const l_LVE3_KH05=["8/13", "8/14"];
+const s_LVE3_KH05=[0.01, 2.49];
+const c_LVE3_KH05=[0.0, 0.0];
+const f_LVE3_KH05=[0, 0];
+makeHistChart('hist_LVE3_KH05', l_LVE3_KH05, s_LVE3_KH05, c_LVE3_KH05, f_LVE3_KH05);
+
+// LVE5_KH01 (n=16)
+const l_LVE5_KH01=["7/19", "7/20", "7/21", "7/22", "7/23", "7/24", "7/27", "7/28", "7/29", "7/30", "7/31", "8/1", "8/2", "8/3", "8/8", "8/10"];
+const s_LVE5_KH01=[5.11, 1.37, 1.82, 0.84, 4.17, 2.8, 2.47, 6.22, 2.61, 7.94, 1.61, 0.75, 1.53, 1.18, 0.02, 0.01];
+const c_LVE5_KH01=[0.53, 0.52, 1.18, 0.0, 0.6, 0.0, 2.04, 0.68, 0.86, 0.56, 0.49, 0.84, 0.45, 0.2, 0.0, 0.0];
+const f_LVE5_KH01=[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0];
+makeHistChart('hist_LVE5_KH01', l_LVE5_KH01, s_LVE5_KH01, c_LVE5_KH01, f_LVE5_KH01);
+
+// SLT4_KH02 (n=25)
+const l_SLT4_KH02=["7/15", "7/16", "7/17", "7/18", "7/19", "7/20", "7/21", "7/22", "7/23", "7/24", "7/25", "7/28", "7/29", "7/30", "7/31", "8/1", "8/2", "8/3", "8/4", "8/5", "8/6", "8/7", "8/8", "8/9", "8/10"];
+const s_SLT4_KH02=[14.93, 18.52, 17.66, 13.17, 19.64, 20.14, 21.36, 23.33, 14.95, 5.08, 5.6, 7.24, 4.01, 3.21, 8.66, 21.17, 24.98, 15.5, 2.57, 0.22, 0.7, 1.16, 1.02, 1.48, 0.78];
+const c_SLT4_KH02=[0.63, 1.04, 0.87, 0.5, 0.76, 0.52, 0.31, 0.93, 1.4, 1.54, 2.52, 0.57, 0.67, 1.43, 1.18, 0.56, 0.57, 0.77, 3.26, 0.0, 0.0, 1.06, 2.3, 0.0, 1.79];
+const f_SLT4_KH02=[0, 1, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0];
+makeHistChart('hist_SLT4_KH02', l_SLT4_KH02, s_SLT4_KH02, c_SLT4_KH02, f_SLT4_KH02);
+
+// SLT8_KH01 (n=22)
+const l_SLT8_KH01=["7/19", "7/20", "7/21", "7/23", "7/27", "7/28", "7/29", "7/30", "7/31", "8/1", "8/2", "8/3", "8/4", "8/5", "8/6", "8/7", "8/8", "8/9", "8/10", "8/11", "8/12", "8/13"];
+const s_SLT8_KH01=[1.19, 0.09, 0.11, 0.07, 16.26, 13.31, 4.72, 7.77, 20.64, 32.03, 23.85, 22.21, 12.96, 17.56, 14.99, 21.7, 14.54, 1.76, 17.01, 12.95, 20.26, 15.9];
+const c_SLT8_KH01=[0.0, 0.0, 0.0, 0.0, 0.7, 0.62, 0.44, 0.55, 0.87, 0.62, 0.64, 0.62, 0.23, 0.39, 0.43, 0.59, 0.2, 0.55, 0.53, 0.77, 0.56, 0.88];
+const f_SLT8_KH01=[0, 0, 0, 0, 1, 2, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0];
+makeHistChart('hist_SLT8_KH01', l_SLT8_KH01, s_SLT8_KH01, c_SLT8_KH01, f_SLT8_KH01);
+
+// TST1_KH04 (n=4)
+const l_TST1_KH04=["8/13", "8/14", "8/15", "8/16"];
+const s_TST1_KH04=[1.12, 2.41, 1.05, 2.26];
+const c_TST1_KH04=[0.0, 0.0, 0.0, 0.47];
+const f_TST1_KH04=[0, 0, 0, 0];
+makeHistChart('hist_TST1_KH04', l_TST1_KH04, s_TST1_KH04, c_TST1_KH04, f_TST1_KH04);
+
+// WD1_KH06 (n=40)
+const l_WD1_KH06=["6/25", "6/26", "6/27", "6/28", "6/29", "6/30", "7/1", "7/2", "7/3", "7/5", "7/6", "7/7", "7/8", "7/9", "7/10", "7/11", "7/12", "7/13", "7/24", "7/25", "7/26", "7/27", "7/28", "7/29", "7/30", "7/31", "8/1", "8/2", "8/3", "8/4", "8/5", "8/6", "8/7", "8/8", "8/9", "8/10", "8/11", "8/12", "8/13", "8/14"];
+const s_WD1_KH06=[15.12, 23.66, 19.04, 11.17, 33.98, 36.75, 2.05, 32.12, 22.76, 10.7, 65.77, 43.12, 29.1, 26.87, 27.9, 26.56, 50.49, 0.75, 1.37, 20.31, 17.25, 5.33, 12.38, 8.82, 1.85, 0.92, 18.05, 16.5, 8.97, 18.44, 12.07, 8.56, 10.75, 10.12, 12.53, 10.88, 7.13, 6.59, 4.05, 0.27];
+const c_WD1_KH06=[0.89, 1.78, 1.23, 0.96, 1.26, 0.98, 1.56, 0.38, 0.64, 2.24, 0.63, 0.79, 1.04, 0.74, 0.45, 0.34, 0.97, 3.33, 1.11, 0.74, 0.94, 1.14, 1.61, 2.89, 5.88, 0.0, 1.24, 1.54, 1.29, 0.84, 0.6, 0.72, 0.92, 0.92, 0.51, 0.53, 0.52, 0.23, 2.6, 0.0];
+const f_WD1_KH06=[1, 3, 1, 0, 0, 2, 0, 1, 0, 1, 3, 2, 1, 0, 1, 1, 0, 1, 0, 0, 1, 2, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0];
+makeHistChart('hist_WD1_KH06', l_WD1_KH06, s_WD1_KH06, c_WD1_KH06, f_WD1_KH06);
+
+// WD1_KH10 (n=29)
+const l_WD1_KH10=["7/18", "7/19", "7/20", "7/21", "7/23", "7/24", "7/25", "7/26", "7/27", "7/28", "7/29", "7/30", "7/31", "8/1", "8/2", "8/3", "8/4", "8/5", "8/6", "8/7", "8/8", "8/9", "8/10", "8/11", "8/12", "8/13", "8/14", "8/15", "8/16"];
+const s_WD1_KH10=[1.33, 1.01, 0.24, 0.99, 2.66, 13.68, 28.49, 16.14, 7.29, 13.56, 13.51, 3.19, 1.24, 14.87, 13.41, 9.47, 18.52, 15.68, 9.96, 11.37, 13.03, 20.25, 14.7, 9.41, 8.88, 22.95, 29.24, 7.25, 2.63];
+const c_WD1_KH10=[0.0, 2.78, 0.0, 0.0, 1.55, 1.38, 1.17, 0.77, 0.17, 1.41, 1.78, 1.2, 0.0, 1.54, 1.63, 1.17, 0.73, 0.82, 0.52, 0.72, 0.54, 0.7, 0.3, 0.53, 1.39, 0.27, 0.65, 0.68, 0.61];
+const f_WD1_KH10=[0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0];
+makeHistChart('hist_WD1_KH10', l_WD1_KH10, s_WD1_KH10, c_WD1_KH10, f_WD1_KH10);
+
+// WD1_KH11 (n=21)
+const l_WD1_KH11=["7/21", "7/22", "7/23", "7/27", "7/28", "7/29", "7/30", "7/31", "8/1", "8/2", "8/3", "8/4", "8/5", "8/6", "8/7", "8/8", "8/9", "8/10", "8/11", "8/12", "8/13"];
+const s_WD1_KH11=[3.68, 13.66, 8.39, 0.31, 10.43, 6.26, 8.17, 13.17, 32.33, 2.8, 16.37, 17.3, 27.35, 0.74, 23.23, 26.51, 32.82, 12.48, 12.47, 12.26, 6.44];
+const c_WD1_KH11=[0.0, 0.42, 1.12, 0.0, 0.82, 0.65, 1.66, 0.65, 0.55, 1.41, 0.48, 0.71, 0.52, 0.0, 0.4, 1.01, 1.34, 1.65, 0.64, 0.82, 0.71];
+const f_WD1_KH11=[0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 2, 0, 0];
+makeHistChart('hist_WD1_KH11', l_WD1_KH11, s_WD1_KH11, c_WD1_KH11, f_WD1_KH11);
+
+// WD1_KH12 (n=2)
+const l_WD1_KH12=["8/15", "8/16"];
+const s_WD1_KH12=[28.02, 12.53];
+const c_WD1_KH12=[0.35, 1.37];
+const f_WD1_KH12=[1, 0];
+makeHistChart('hist_WD1_KH12', l_WD1_KH12, s_WD1_KH12, c_WD1_KH12, f_WD1_KH12);
+
+// WD4_KH01 (n=31)
+const l_WD4_KH01=["7/1", "7/2", "7/3", "7/4", "7/5", "7/6", "7/7", "7/8", "7/9", "7/10", "7/11", "7/12", "7/13", "7/24", "7/25", "7/26", "7/27", "7/28", "7/29", "7/31", "8/3", "8/4", "8/5", "8/6", "8/7", "8/8", "8/9", "8/10", "8/11", "8/12", "8/13"];
+const s_WD4_KH01=[21.68, 19.39, 10.1, 5.69, 9.75, 12.38, 15.8, 17.21, 15.73, 12.71, 12.75, 0.1, 11.25, 8.22, 19.57, 18.35, 3.26, 13.42, 6.77, 6.16, 14.27, 22.61, 23.31, 18.41, 16.76, 17.93, 25.82, 16.71, 15.78, 22.63, 9.71];
+const c_WD4_KH01=[0.88, 1.75, 0.86, 2.02, 1.59, 0.81, 0.76, 2.91, 1.7, 0.51, 0.61, 0.0, 1.0, 1.0, 1.58, 1.05, 2.4, 1.59, 2.9, 1.43, 0.56, 0.32, 0.51, 0.8, 0.61, 0.6, 0.6, 0.58, 1.3, 1.3, 1.98];
+const f_WD4_KH01=[0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 2, 1, 0, 1, 0, 0, 0, 3, 0, 1, 2, 0];
+makeHistChart('hist_WD4_KH01', l_WD4_KH01, s_WD4_KH01, c_WD4_KH01, f_WD4_KH01);
+
+// WD8_KH01 (n=6)
+const l_WD8_KH01=["8/4", "8/7", "8/8", "8/10", "8/11", "8/12"];
+const s_WD8_KH01=[0.64, 7.12, 5.45, 9.98, 0.14, 3.92];
+const c_WD8_KH01=[0.0, 0.21, 0.71, 0.56, 0.0, 1.12];
+const f_WD8_KH01=[0, 1, 0, 1, 0, 0];
+makeHistChart('hist_WD8_KH01', l_WD8_KH01, s_WD8_KH01, c_WD8_KH01, f_WD8_KH01);
+
+// WD8_KH06 (n=4)
+const l_WD8_KH06=["8/4", "8/5", "8/14", "8/15"];
+const s_WD8_KH06=[1.13, 1.94, 9.31, 1.92];
+const c_WD8_KH06=[0.74, 0.42, 0.55, 0.85];
+const f_WD8_KH06=[0, 0, 0, 0];
+makeHistChart('hist_WD8_KH06', l_WD8_KH06, s_WD8_KH06, c_WD8_KH06, f_WD8_KH06);
+
+</script>
+</body>
+</html>
